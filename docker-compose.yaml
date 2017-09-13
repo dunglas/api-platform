@@ -1,0 +1,70 @@
+version: '3'
+
+services:
+    php:
+        build:
+            context: ./api
+        depends_on:
+            - db
+        env_file:
+          - ./api/.env
+        # Comment out these volumes in production
+        volumes:
+            - ./api:/srv/api:rw
+            # If you develop on Linux, comment out the following volumes to just use bind-mounted project directory from host
+            - /srv/api/var/
+            - /srv/api/var/cache/
+            - /srv/api/var/logs/
+            - /srv/api/var/sessions/
+
+    nginx:
+        build:
+            context: ./api
+            dockerfile: ./Dockerfile.nginx
+        depends_on:
+            - php
+        ports:
+            - "8000:80"
+
+    varnish:
+        build:
+            context: ./api
+            dockerfile: ./Dockerfile.varnish
+        depends_on:
+            - nginx
+        # Comment out this volume in production
+        volumes:
+            - ./api/docker/varnish/conf:/etc/varnish:ro
+        ports:
+            - "9000:80"
+
+    db:
+        # In production, you may want to use a managed database service
+        image: postgres:9.6-alpine
+        environment:
+            - POSTGRES_DB=api
+            - POSTGRES_USER=api-platform
+            # You should definitely change the password in production
+            - POSTGRES_PASSWORD=!ChangeMe!
+        volumes:
+            - db-data:/var/lib/postgresql/data:rw
+            # You may use a bind-mounted host directory instead, so that it is harder to accidentally remove the volume and lose all your data!
+            # - ./docker/db/data:/var/lib/postgresql/data:rw
+        ports:
+            - "5432:5432"
+
+    admin:
+        # Use a static website hosting service or the nginx image in production
+        build:
+            context: ./admin
+            dockerfile: ./Dockerfile
+        env_file:
+          - ./admin/.env
+        volumes:
+            - ./admin:/usr/src/admin:rw
+            - /usr/src/admin/node_modules
+        ports:
+          - "3000:3000"
+
+volumes:
+    db-data: {}
