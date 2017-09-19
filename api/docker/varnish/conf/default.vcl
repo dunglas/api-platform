@@ -21,6 +21,10 @@ acl ban {
   "php";
 }
 
+sub vcl_init {
+  new env = cfg.env();
+}
+
 sub vcl_backend_response {
   # Ban lurker friendly header
   set beresp.http.url = bereq.url;
@@ -53,6 +57,11 @@ sub vcl_recv {
     }
 
     return(synth(400, "ApiPlatform-Ban-Regex HTTP header must be set."));
+  }
+
+  # Don't cache in dev mode
+  if (env.get("APP_ENV") == "dev") {
+    return(pass);
   }
 }
 
