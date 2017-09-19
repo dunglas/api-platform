@@ -6,5 +6,4 @@ services:
 script:
   - docker-compose up -d
   - sleep 20
-  - docker-compose run --rm app bin/console security:check
-  - docker-compose run --rm app bin/console doctrine:schema:create
+  - docker-compose exec php bin/console security:check

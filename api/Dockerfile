@@ -6,8 +6,7 @@ RUN apk add --no-cache --virtual .persistent-deps \
 		make \
 		openssl \
         postgresql-dev \
-		zlib \
-		bash
+		zlib
 
 ENV APCU_VERSION 5.1.8
 
@@ -54,7 +53,7 @@ RUN mkdir -p \
 		var/sessions \
 	&& composer install --prefer-dist --no-dev --no-autoloader --no-scripts --no-progress --no-suggest \
 	&& composer clear-cache \
-# Permissions hack because setfacl does not work on Mac and Windows
+    # Permissions hack because setfacl does not work on Mac and Windows
 	&& chown -R www-data var
 
 RUN composer dump-autoload --optimize --classmap-authoritative --no-dev

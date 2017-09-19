@@ -59,12 +59,25 @@ services:
             context: ./admin
             dockerfile: ./Dockerfile
         env_file:
-          - ./admin/.env
+            - ./admin/.env
         volumes:
             - ./admin:/usr/src/admin:rw
             - /usr/src/admin/node_modules
         ports:
           - "3000:3000"
+
+    client:
+        # Use a static website hosting service or the nginx image in production
+        build:
+            context: ./client
+            dockerfile: ./Dockerfile
+        env_file:
+            - ./client/.env
+        volumes:
+            - ./client:/usr/src/client:rw
+            - /usr/src/client/node_modules
+        ports:
+          - "3000:80"
 
 volumes:
     db-data: {}
