@@ -1,5 +1,6 @@
 vcl 4.0;
 
+import cfg;
 import std;
 
 backend default {
@@ -19,6 +20,10 @@ backend default {
 acl ban {
   "localhost";
   "php";
+}
+
+sub vcl_init {
+  new env = cfg.env();
 }
 
 sub vcl_backend_response {
@@ -53,6 +58,11 @@ sub vcl_recv {
     }
 
     return(synth(400, "ApiPlatform-Ban-Regex HTTP header must be set."));
+  }
+
+  # Don't cache in dev mode
+  if (env.get("APP_ENV") == "dev") {
+    return(pass);
   }
 }
 

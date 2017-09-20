@@ -1,6 +1,29 @@
 FROM alpine:3.5
 
-RUN apk add --no-cache varnish
+RUN apk add --no-cache libcurl varnish
+
+RUN set -xe \
+    && apk add --no-cache --virtual .build-deps \
+        autoconf \
+        automake \
+        curl-dev \
+        file \
+        gcc \
+        git \
+        libtool \
+        make \
+        pkgconf \
+        python \
+        py-docutils \
+        varnish-dev \
+    && git clone --depth 1 -b 4.1 https://github.com/carlosabalde/libvmod-cfg.git /tmp/libvmod-cfg \
+    && cd /tmp/libvmod-cfg \
+    && ./autogen.sh \
+    && ./configure \
+    && make \
+    && make install \
+    && rm -rf /tmp/libvmod_cfg \
+    && apk del .build-deps
 
 COPY docker/varnish/conf /etc/varnish/
 COPY docker/varnish/start.sh /usr/local/bin/docker-app-start

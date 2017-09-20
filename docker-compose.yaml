@@ -34,6 +34,8 @@ services:
             dockerfile: ./Dockerfile.varnish
         depends_on:
             - api
+        env_file:
+          - ./api/.env
         # Comment out this volume in production
         volumes:
             - ./api/docker/varnish/conf:/etc/varnish:ro
