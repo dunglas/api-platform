@@ -1,5 +1,6 @@
 vcl 4.0;
 
+import cfg;
 import std;
 
 backend default {
