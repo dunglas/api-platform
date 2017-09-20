@@ -25,6 +25,8 @@ services:
             - php
         ports:
             - "80:80"
+        volumes:
+            - ./api/public:/srv/api/public:rw
 
     cache-proxy:
         build:

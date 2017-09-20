@@ -30,8 +30,7 @@ COPY docker/php/install-composer.sh /usr/local/bin/install-composer
 RUN chmod +x /usr/local/bin/install-composer
 
 RUN set -xe \
-	&& apk add --no-cache --virtual .fetch-deps \
-		openssl \
+	&& apk add --no-cache --virtual .fetch-deps openssl \
 	&& install-composer \
 	&& mv composer.phar /usr/local/bin/composer \
 	&& apk del .fetch-deps
@@ -44,18 +43,17 @@ RUN composer global require "hirak/prestissimo:^0.3" --prefer-dist --no-progress
 
 WORKDIR /srv/api
 
-COPY . .
+# Prevent the reinstallation of vendors at every changes in the source code
+COPY composer.json composer.lock ./
+RUN composer install --prefer-dist --no-dev --no-autoloader --no-scripts --no-progress --no-suggest \
+    && composer clear-cache
 
-RUN mkdir -p \
-		var/cache \
-		var/logs \
-		var/sessions \
-	&& composer install --prefer-dist --no-dev --no-autoloader --no-scripts --no-progress --no-suggest \
-	&& composer clear-cache \
+COPY . ./
+
+RUN mkdir -p var/cache var/logs var/sessions \
+    && composer dump-autoload --optimize --classmap-authoritative --no-dev \
     # Permissions hack because setfacl does not work on Mac and Windows
 	&& chown -R www-data var
-
-RUN composer dump-autoload --optimize --classmap-authoritative --no-dev
 
 COPY docker/php/docker-entrypoint.sh /usr/local/bin/docker-entrypoint
 RUN chmod +x /usr/local/bin/docker-entrypoint
