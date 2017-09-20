@@ -4,8 +4,7 @@ RUN apk add --no-cache --virtual .persistent-deps \
 		git \
 		icu-libs \
 		make \
-		openssl \
-        postgresql-dev \
+		postgresql-dev \
 		zlib
 
 ENV APCU_VERSION 5.1.8

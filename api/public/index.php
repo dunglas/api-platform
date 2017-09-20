@@ -16,8 +16,12 @@ if ($_SERVER['APP_DEBUG'] ?? false) {
     Debug::enable();
 }
 
-if ('varnish' !== $proxyIp = gethostbyname('varnish')) {
-    Request::setTrustedProxies([$proxyIp], Request::HEADER_FORWARDED);
+if ($trustedProxies = $_SERVER['APP_TRUSTED_PROXIES'] ?? false) {
+    Request::setTrustedProxies(json_decode($trustedProxies, true), Request::HEADER_X_FORWARDED_ALL);
+}
+
+if ($trustedHosts = $_SERVER['APP_TRUSTED_HOSTS'] ?? false) {
+    Request::setTrustedHosts(json_decode($trustedHosts, true));
 }
 
 $kernel = new Kernel($_SERVER['APP_ENV'] ?? 'dev', $_SERVER['APP_DEBUG'] ?? false);
