@@ -3,7 +3,13 @@ sudo: required
 services:
   - docker
 
+before_script:
+  - sudo service postgresql stop
+  # wait for postgresql to shutdown
+  - while sudo lsof -Pi :5432 -sTCP:LISTEN -t; do sleep 1; done
+
 script:
   - docker-compose up -d
   - sleep 20
-  - docker-compose exec php bin/console security:check
+  - docker-compose exec -T php composer req sensiolabs/security-checker
+  - docker-compose exec -T php bin/console security:check
