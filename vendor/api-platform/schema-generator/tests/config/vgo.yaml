@@ -1,0 +1,16 @@
+rdfa: [tests/data/vgo.rdf, data/schema.rdfa]
+
+annotationGenerators:
+  - ApiPlatform\SchemaGenerator\AnnotationGenerator\PhpDocAnnotationGenerator
+  - ApiPlatform\SchemaGenerator\AnnotationGenerator\DoctrineOrmAnnotationGenerator
+  - ApiPlatform\SchemaGenerator\AnnotationGenerator\ConstraintAnnotationGenerator
+
+namespaces:
+  entity: 'AppBundle\Entity'
+
+types:
+  Session:
+    vocabularyNamespace: http://purl.org/net/VideoGameOntology#
+  Thing: ~
+
+debug: true

@@ -1,0 +1,40 @@
+resources:
+    'ApiPlatform\Core\Tests\Fixtures\TestBundle\Entity\Dummy': ~
+    'ApiPlatform\Core\Tests\Fixtures\TestBundle\Entity\FileConfigDummy':
+        shortName: 'thedummyshortname'
+        description: 'Dummy resource'
+        itemOperations:
+            my_op_name:
+                method: 'GET'
+            my_other_op_name:
+                method: 'POST'
+        collectionOperations:
+            my_collection_op:
+                method: 'POST'
+                path: 'the/collection/path'
+        attributes:
+            normalization_context:
+                groups: ['default']
+            denormalization_context:
+                groups: ['default']
+            hydra_context:
+                '@type': 'hydra:Operation'
+                '@hydra:title': !php/const:ApiPlatform\Core\Tests\Fixtures\TestBundle\Entity\FileConfigDummy::HYDRA_TITLE
+        iri: 'someirischema'
+        properties:
+            'foo':
+                subresource: {collection: true, resourceClass: 'Foo'}
+                description: 'The dummy foo'
+                readable: true
+                writable: true
+                readableLink: false
+                writableLink: false
+                required: true
+                attributes:
+                    'foo': ['Foo']
+                    'bar':
+                        '0': ['Bar']
+                        'baz': 'Baz'
+                    'baz': 'Baz'
+            'name':
+                description: 'The dummy name'

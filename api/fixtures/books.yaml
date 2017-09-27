@@ -1,0 +1,12 @@
+# api/fixtures/books.yaml
+'App\Entity\Book':
+    book_{1..100}:
+        title: <sentence()>
+        isbn: <isbn13()>
+        publishedAt: <dateTime()>
+
+'App\Entity\Review':
+    review_{1..500}:
+        book: '@book_*'
+        body: <paragraph()>
+        createdAt: <dateTime()>

@@ -1,0 +1,6 @@
+id:
+  generationStrategy: uuid
+types:
+  Person:
+    properties:
+      name: ~

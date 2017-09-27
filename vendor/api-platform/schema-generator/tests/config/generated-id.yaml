@@ -1,0 +1,6 @@
+id:
+  generationStrategy: auto
+types:
+  Person:
+    properties:
+      name: ~

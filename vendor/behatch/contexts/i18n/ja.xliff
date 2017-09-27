@@ -1,0 +1,395 @@
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file original="global" source-language="en" target-language="ja" datatype="plaintext">
+        <header />
+        <body>
+            <!-- BrowserContext.php -->
+            <trans-unit id="i-start-timing-now">
+                <source>(I )start timing now</source>
+                <target></target>
+            </trans-unit>
+            <trans-unit id="i-set-basic-authentication">
+                <source><![CDATA[I set basic authentication with :user and :password]]></source>
+                <target><![CDATA[/^Basic認証を"(?P<user>[^"]*)"と"(?P<password>[^"]*)"で設定する$/u]]></target>
+            </trans-unit>
+            <trans-unit id="i-am-on-url-composed-by">
+                <source><![CDATA[(I )am on url composed by:]]></source>
+                <target><![CDATA[/^(?:|私が)下記から構成されるURLに遷移する:$/u]]></target>
+            </trans-unit>
+            <trans-unit id="i-click-on-the-nth-element">
+                <source><![CDATA[(I )click on the :index :element element]]></source>
+                <target><![CDATA[(私が ):index 番目の :element 要素をクリックする]]></target>
+            </trans-unit>
+            <trans-unit id="i-follow-the-nth-link">
+                <source><![CDATA[(I )follow the :index :link link]]></source>
+                <target><![CDATA[(私が ):index 番目の :link に遷移する]]></target>
+            </trans-unit>
+            <trans-unit id="i-fill-in-with-the-current-date">
+                <source><![CDATA[(I )fill in :field with the current date]]></source>
+                <target><![CDATA[/^(?:|私が)"(?P<field>[^"]*)"に現在の日付を入力する$/u]]></target>
+            </trans-unit>
+            <trans-unit id="i-fill-in-with-the-current-date-and-modifier">
+                <source><![CDATA[(I )fill in :field with the current date and modifier :modifier]]></source>
+                <target><![CDATA[/^(?:|私が)"(?P<field>[^"]*)"に現在の日付を"(?P<modifier>[^"]*)"で入力する$/u]]></target>
+            </trans-unit>
+            <trans-unit id="i-hover">
+                <source><![CDATA[(I )hover :element]]></source>
+                <target><![CDATA[/^(?:|私が)"(?P<element>[^"]*)"にhoverする$/u]]></target>
+            </trans-unit>
+            <trans-unit id="i-save-the-value-of-in-the-parameters">
+                <source><![CDATA[(I )save the value of :field in the :parameter parameter]]></source>
+                <target><![CDATA[/^(?:|私が)"(?P<field>[^"]*)"の値を"(?P<parameter>[^"]*)"パラメーターに保存する$/u]]></target>
+            </trans-unit>
+            <trans-unit id="i-wait-seconds-until-i-see">
+                <source><![CDATA[(I )wait :count second(s) until I see :text]]></source>
+                <target><![CDATA[/^(?:|私が)"(?P<text>[^"]*)"を見るまで(?P<seconds>\d+)秒間?待つ$/u]]></target>
+            </trans-unit>
+            <trans-unit id="i-should-not-see-within-second">
+                <source>(I )should not see :text within :count second(s)</source>
+                <target></target>
+            </trans-unit>
+            <trans-unit id="i-wait-until-i-see">
+                <source><![CDATA[(I )wait until I see :text]]></source>
+                <target><![CDATA[/^(?:|私が)"(?P<text>[^"]*)"を見るまで待つ$/u]]></target>
+            </trans-unit>
+            <trans-unit id="i-wait-seconds-until-i-see-in-the-element">
+                <source><![CDATA[(I )wait :count second(s) until I see :text in the :element element]]></source>
+                <target><![CDATA[/^(?:|私が)"(?P<element>[^"]*)"要素(?:で|に)"(?P<text>[^"]*)"を見るまで(?P<seconds>\d+)秒間?待つ$/u]]></target>
+            </trans-unit>
+            <trans-unit id="i-wait-second">
+                <source><![CDATA[(I )wait :count second(s)]]></source>
+                <target><![CDATA[/^(?:|私が)(?P<seconds>\d+)秒間?待つ$/u]]></target>
+            </trans-unit>
+            <trans-unit id="i-wait-until-i-see-in-the-element">
+                <source><![CDATA[(I )wait until I see :text in the :element element]]></source>
+                <target><![CDATA[/^(?:|私が)"(?P<element>[^"]*)"要素(?:で|に)"(?P<text>[^"]*)"を見るまで待つ$/u]]></target>
+            </trans-unit>
+            <trans-unit id="i-wait-for-element">
+                <source><![CDATA[(I )wait for :element element]]></source>
+                <target><![CDATA[(私が):element要素を見るまで待つ]]></target>
+            </trans-unit>
+            <trans-unit id="i-wait-seconds-for-element">
+                <source><![CDATA[(I )wait :count second(s) for :element element]]></source>
+                <target><![CDATA[(私が ):element 要素を見るまで :count 秒(間)待つ]]></target>
+            </trans-unit>
+            <trans-unit id="i-should-see-n-in-the-nth">
+                <source><![CDATA[/^(?:|I )should see (?P<count>\d+) "(?P<element>[^"]*)" in the (?P<index>\d+)(?:st|nd|rd|th) "(?P<parent>[^"]*)"$/]]></source>
+                <target><![CDATA[/^(?P<index>\d+)番目の"(?P<parent>[^"]*)"(?:|要素)が(?P<count>\d+)個の"(?P<element>[^"]*)"(?:|要素)を持つこと$/u]]></target>
+            </trans-unit>
+            <trans-unit id="i-should-see-less-than-n-in-the-nth">
+                <source><![CDATA[(I )should see less than :count :element in the :index :parent]]></source>
+                <target><![CDATA[/^(?P<index>\d+)番目の"(?P<parent>[^"]*)"(?:|要素)が(?P<nth>\d+)個以下の"(?P<element>[^"]*)"(?:|要素)を持つこと$/u]]></target>
+            </trans-unit>
+            <trans-unit id="i-should-see-more-than-n-in-the-nth">
+                <source><![CDATA[(I )should see more than :count :element in the :index :parent]]></source>
+                <target><![CDATA[/^(?P<index>\d+)番目の"(?P<parent>[^"]*)"(?:|要素)が(?P<nth>\d+)個以上の"(?P<element>[^"]*)"(?:|要素)を持つこと$/u]]></target>
+            </trans-unit>
+            <trans-unit id="the-element-should-be-enabled">
+                <source><![CDATA[the element :element should be enabled]]></source>
+                <target><![CDATA[/^"(?P<element>[^"]*)"(?:|要素)が有効であること$/u]]></target>
+            </trans-unit>
+            <trans-unit id="the-element-shouls-be-disabled">
+                <source><![CDATA[the element :element should be disabled]]></source>
+                <target><![CDATA[/^"(?P<element>[^"]*)"(?:|要素)が無効であること$/u]]></target>
+            </trans-unit>
+            <trans-unit id="the-select-box-should-contain">
+                <source><![CDATA[the :select select box should contain :option]]></source>
+                <target><![CDATA[/^セレクトボックス"(?P<select>[^"]*)"は"(?P<option>[^"]*)"を含むこと$/u]]></target>
+            </trans-unit>
+            <trans-unit id="the-select-box-should-not-contain">
+                <source><![CDATA[the :select select box should not contain :option]]></source>
+                <target><![CDATA[/^セレクトボックス"(?P<select>[^"]*)"は"(?P<option>[^"]*)"を含まないこと$/u]]></target>
+            </trans-unit>
+            <trans-unit id="the-element-shouls-be-visible">
+                <source><![CDATA[the :element element should be visible]]></source>
+                <target><![CDATA[/^要素"(?P<element>[^"]*)"は可視であること$/u]]></target>
+            </trans-unit>
+            <trans-unit id="the-element-should-not-be-visible">
+                <source><![CDATA[the :element element should not be visible]]></source>
+                <target><![CDATA[/^要素"(?P<element>[^"]*)"は不可視であること$/u]]></target>
+            </trans-unit>
+            <trans-unit id="i-switch-to-iframe">
+                <source><![CDATA[(I )switch to iframe :name]]></source>
+                <target><![CDATA[(私が　):name iframeにフォーカスする]]></target>
+            </trans-unit>
+            <trans-unit id="i-switch-to-frame">
+                <source><![CDATA[(I )switch to frame :name]]></source>
+                <target><![CDATA[(私が　):name frameにフォーカスする]]></target>
+            </trans-unit>
+            <trans-unit id="i-switch-to-main-frame">
+                <source><![CDATA[(I )switch to main frame]]></source>
+                <target><![CDATA[(私が　)メインフレームにフォーカスする]]></target>
+            </trans-unit>
+            <trans-unit id="the-total-elapsed-time-should-be-than-seconds">
+                <source>(the )total elapsed time should be :comparison than :expected seconds</source>
+                <target></target>
+            </trans-unit>
+            <trans-unit id="the-total-elapsed-time-should-be-to-seconds">
+                <source>(the )total elapsed time should be :comparison to :expected seconds</source>
+                <target></target>
+            </trans-unit>
+
+            <!-- FileSystemContext.php -->
+            <trans-unit id="i-put-the-file-into-field">
+                <source><![CDATA[(I )put the file :file into :field]]></source>
+                <target><![CDATA[/^(?:|私が)ファイル"(?P<file>[^"]*)"を"(?P<field>(?:[^"]|\\")*)"に設定する$/u]]></target>
+            </trans-unit>
+            <trans-unit id="i-execute">
+                <source><![CDATA[(I )execute :command]]></source>
+                <target><![CDATA[/^(?:|私が)"(?P<command>[^"]*)"を実行する$/u]]></target>
+            </trans-unit>
+            <trans-unit id="i-execute-from-project-root">
+                <source><![CDATA[(I )execute :command from project root]]></source>
+                <target><![CDATA[/^(?:|私が)"(?P<command>[^"]*)"をプロジェクトルートから実行する$/u]]></target>
+            </trans-unit>
+            <trans-unit id="i-create-the-file-contening">
+                <source><![CDATA[(I )create the file :filename containing:]]></source>
+                <target><![CDATA[(私が):filenameというファイルを下記のテキストで作成する:]]></target>
+            </trans-unit>
+            <trans-unit id="print-the-content-of-file">
+                <source><![CDATA[print the content of :filename file]]></source>
+                <target><![CDATA[:filenameというファイルのテキストを表示する]]></target>
+            </trans-unit>
+
+            <!-- JsonContext.php -->
+            <trans-unit id="the-response-should-be-in-json">
+                <source><![CDATA[the response should be in JSON]]></source>
+                <target><![CDATA[/^レスポンスがJSON(?:|形式)であること$/u]]></target>
+            </trans-unit>
+            <trans-unit id="the-response-should-not-be-in-json">
+                <source><![CDATA[the response should not be in JSON]]></source>
+                <target><![CDATA[/^レスポンスがJSON(?:|形式)でないこと$/u]]></target>
+            </trans-unit>
+            <trans-unit id="the-json-node-should-be-equal-to">
+                <source><![CDATA[the JSON node :node should be equal to :text]]></source>
+                <target><![CDATA[/^JSONのノード"(?P<node>[^"]*)"が"(?P<text>[^"]*)"と等しいこと$/u]]></target> </trans-unit>
+            <trans-unit id="the-json-node-should-have-n-elements">
+                <source><![CDATA[the JSON node :node should have :count element(s)]]></source>
+                <target><![CDATA[/^JSONのノード"(?P<node>[^"]*)"が(?P<nth>\d+)個の要素を持つこと$/u]]></target>
+            </trans-unit>
+            <trans-unit id="the-json-node-should-contain">
+                <source><![CDATA[the JSON node :node should contain :text]]></source>
+                <target><![CDATA[/^JSONのノード"(?P<node>[^"]*)"が"(?P<text>[^"]*)"を含むこと$/u]]></target>
+            </trans-unit>
+            <trans-unit id="the-json-node-should-not-contain">
+                <source><![CDATA[the JSON node :node should not contain :text]]></source>
+                <target><![CDATA[/^JSONのノード"(?P<node>[^"]*)"が"(?P<text>[^"]*)"を含まないこと$/u]]></target>
+            </trans-unit>
+            <trans-unit id="the-json-node-should-exist">
+                <source><![CDATA[the JSON node :name should exist]]></source>
+                <target><![CDATA[/^JSONにノード"(?P<name>[^"]*)"が存在すること$/u]]></target>
+            </trans-unit>
+            <trans-unit id="the-json-node-should-not-exsists">
+                <source><![CDATA[the JSON node :name should not exist]]></source>
+                <target><![CDATA[/^JSONにノード"(?P<name>[^"]*)"が存在しないこと$/u]]></target>
+            </trans-unit>
+            <trans-unit id="the-json-should-be-valid-according-to-this-schema">
+                <source><![CDATA[the JSON should be valid according to this schema:]]></source>
+                <target><![CDATA[/^JSONが下記のスキーマに従っていること:$/u]]></target>
+            </trans-unit>
+            <trans-unit id="the-json-should-be-valid-according-to-the-schema">
+                <source><![CDATA[the JSON should be valid according to the schema :filename]]></source>
+                <target><![CDATA[/^JSONがスキーマファイル"(?P<filename>[^"]*)"に従っていること$/u]]></target>
+            </trans-unit>
+            <trans-unit id="the-json-should-be-eqal-to">
+                <source><![CDATA[the JSON should be equal to:]]></source>
+                <target><![CDATA[/^JSONが下記と一致すること:$/u]]></target>
+            </trans-unit>
+            <trans-unit id="print-last-json-response">
+                <source><![CDATA[print last JSON response]]></source>
+                <target><![CDATA[最後のJSONレスポンスを表示する]]></target>
+            </trans-unit>
+
+            <!-- RestContext.php -->
+            <trans-unit id="i-send-a-request-on">
+                <source><![CDATA[I send a :method request to :url]]></source>
+                <target><![CDATA[/^(?:|私が)(?P<method>[A-Z]+)メソッドで"(?P<url>[^"]*)"へリクエストを送る$/u]]></target>
+            </trans-unit>
+            <trans-unit id="i-send-a-request-on-with-parameters">
+                <source><![CDATA[I send a :method request to :url with parameters:]]></source>
+                <target><![CDATA[/^(?:|私が)(?P<method>[A-Z]+)メソッドで"(?P<url>[^"]*)"へ下記のパラメーターを伴ったリクエストを送る:$/u]]></target>
+            </trans-unit>
+            <trans-unit id="i-send-a-request-on-with-body">
+                <source><![CDATA[I send a :method request to :url with body:]]></source>
+                <target><![CDATA[/^(?:|私が)(?P<method>[A-Z]+)メソッドで"(?P<url>[^"]*)"へ下記のボディを持ったリクエストを送る:$/u]]></target>
+            </trans-unit>
+            <trans-unit id="the-response-should-be-empty">
+                <source><![CDATA[the response should be empty]]></source>
+                <target><![CDATA[/^レスポンスが空であること$/u]]></target>
+            </trans-unit>
+            <trans-unit id="the-response-should-be-equal-to">
+                <source><![CDATA[the response should be equal to]]></source>
+                <target><![CDATA[/^レスポンスが下記と一致すること:$/u]]></target>
+            </trans-unit>
+            <trans-unit id="the-header-should-be-equal-to">
+                <source><![CDATA[the header :name should be equal to :value]]></source>
+                <target><![CDATA[/^"(?P<name>[^"]*)"ヘッダが"(?P<value>[^"]*)"と一致すること$/u]]></target>
+            </trans-unit>
+            <trans-unit id="the-header-should-not-be-equal-to">
+                <source>the header :name should not be equal to :value</source>
+                <target></target>
+            </trans-unit>
+            <trans-unit id="i-add-header-equal-to">
+                <source><![CDATA[I add :name header equal to :value]]></source>
+                <target><![CDATA[/^(?:|私が)"(?P<name>[^"]*)"ヘッダに"(?P<value>[^"]*)"を追加する$/u]]></target>
+            </trans-unit>
+            <trans-unit id="the-header-should-be-contains">
+                <source><![CDATA[the header :name should contain :value]]></source>
+                <target><![CDATA[/^"(?P<name>[^"]*)"ヘッダが"(?P<value>[^"]*)"を含むこと$/u]]></target>
+            </trans-unit>
+            <trans-unit id="the-header-should-not-contain">
+                <source><![CDATA[the header :name should not contain :value]]></source>
+                <target><![CDATA[/^"(?P<name>[^"]*)"ヘッダが"(?P<value>[^"]*)"を含まないこと$/u]]></target>
+            </trans-unit>
+            <trans-unit id="the-header-should-not-exist">
+                <source><![CDATA[the header :name should not exist]]></source>
+                <target><![CDATA[/^"(?P<name>[^"]*)"ヘッダが存在しないこと$/u]]></target>
+            </trans-unit>
+            <trans-unit id="the-response-should-be-encoded-in">
+                <source><![CDATA[the response should be encoded in :encoding]]></source>
+                <target><![CDATA[/^レスポンスが"(?P<encoding>[^"]*)"でエンコードされていること$/u]]></target>
+            </trans-unit>
+            <trans-unit id="the-response-should-expire-in-the-future">
+                <source><![CDATA[the response should expire in the future]]></source>
+                <target><![CDATA[/^レスポンスが将来期限切れになること$/u]]></target>
+            </trans-unit>
+            <trans-unit id="print-last-response-headers">
+                <source><![CDATA[print last response headers]]></source>
+                <target><![CDATA[/^最後のレスポンスヘッダを表示する$/u]]></target>
+            </trans-unit>
+            <trans-unit id="print-the-corresponding-curl-command">
+                <source><![CDATA[print the corresponding curl command]]></source>
+                <target><![CDATA[/^curlコマンドを表示する$/u]]></target>
+            </trans-unit>
+
+            <!-- TableContext.php -->
+            <trans-unit id="the-columns-schema-of-the-table-should-match">
+                <source><![CDATA[the columns schema of the :table table should match:]]></source>
+                <target><![CDATA[/^テーブル"(?P<table>[^"]*)"のカラムスキーマが下記と一致すること:$/u]]></target>
+            </trans-unit>
+            <trans-unit id="i-should-ess-n-columns-in-the-tables">
+                <source><![CDATA[(I )should see :count column(s) in the :table table]]></source>
+                <target><![CDATA[/^テーブル"(?P<table>[^"]*)"が(?P<nth>\d+)個のカラムを持つこと$/u]]></target>
+            </trans-unit>
+            <trans-unit id="i-should-see-n-rows-in-the-nth-tables">
+                <source><![CDATA[(I )should see :count rows in the :index :table table]]></source>
+                <target><![CDATA[/^(?P<index>\d+)番目のテーブル"(?P<table>[^"]*)"が(?P<nth>\d+)行持つこと$/u]]></target>
+            </trans-unit>
+            <trans-unit id="i-should-see-n-rows-in-the-tables">
+                <source><![CDATA[(I )should see :count row(s) in the :table table]]></source>
+                <target><![CDATA[/^テーブル"(?P<table>[^"]*)"が(?P<nth>\d+)行持つこと$/u]]></target>
+            </trans-unit>
+            <trans-unit id="the-data-in-the-nth-row-of-the-table-should-match">
+                <source><![CDATA[the data in the :index row of the :table table should match:]]></source>
+                <target><![CDATA[/^テーブル"(?P<table>[^"]*)"の(?P<nth>\d+)行目のデータが下記と一致すること:$/u]]></target>
+            </trans-unit>
+            <trans-unit id="the-nth-column-of-the-nth-row-in-the-table-should-contain">
+                <source><![CDATA[the :colIndex column of the :rowIndex row in the :table table should contain :text]]></source>
+                <target><![CDATA[/^テーブル"(?P<table>[^"]*)"の(?P<rowIndex>\d+)行目(?P<colIndes>\d+)列が"(?P<text>[^"]*)"を含むこと$/u]]></target>
+            </trans-unit>
+
+            <!-- DebugContext.php -->
+            <trans-unit id="i-put-a-breakpoint">
+                <source><![CDATA[(I )put a breakpoint]]></source>
+                <target><![CDATA[/^(?:|私が)ブレークポイントを設置する$/u]]></target>
+            </trans-unit>
+            <trans-unit id="i-save-a-screenshot-in">
+                <source><![CDATA[I save a screenshot in :filename]]></source>
+                <target><![CDATA[/^(?:|私が)スクリーンショットを"(?P<filename>[^"]*)"に保存する$/u]]></target>
+            </trans-unit>
+
+            <!-- XmlContext.php -->
+            <trans-unit id="the-xml-should-use-the-namespace">
+                <source><![CDATA[the XML should use the namespace :namespace]]></source>
+                <target><![CDATA[(この)XMLは名前空間 :namespace を使っていること]]></target>
+            </trans-unit>
+            <trans-unit id="the-xml-should-not-use-the-namespace">
+                <source><![CDATA[the XML should not use the namespace :namespace]]></source>
+                <target><![CDATA[(この)XMLは名前空間 :namespace を使っていないこと]]></target>
+            </trans-unit>
+            <trans-unit id="the-xml-feed-should-be-valid-accoriding-to-its-dtd">
+                <source><![CDATA[the XML feed should be valid according to its DTD]]></source>
+                <target><![CDATA[/^XMLフィードが自身のDTDに従っていること$/u]]></target>
+            </trans-unit>
+            <trans-unit id="the-xml-feed-should-be-valid-according-to-the-xsd">
+                <source><![CDATA[the XML feed should be valid according to the XSD :filename]]></source>
+                <target><![CDATA[/^XMLフィードがXSDファイル"(?P<filename>[^"]*)"に従っていること$/u]]></target>
+            </trans-unit>
+            <trans-unit id="the-xml-feed-should-be-valid-according-to-this-xsd">
+                <source><![CDATA[the XML feed should be valid according to this XSD:]]></source>
+                <target><![CDATA[/^XMLフィードが下記のXSDに従っていること:$/u]]></target>
+            </trans-unit>
+            <trans-unit id="the-xml-feed-should-be-valid-according-to-the-relax-ng">
+                <source><![CDATA[the XML feed should be valid according to the relax NG schema :filename]]></source>
+                <target><![CDATA[/^XMLフィードがrelax NG schemaファイル"(?P<filename>[^"]*)"に従っていること$/u]]></target>
+            </trans-unit>
+            <trans-unit id="the-xml-feed-should-be-valid-according-to-this-relax-ng">
+                <source><![CDATA[the XML feed should be valid according to this relax NG schema:]]></source>
+                <target><![CDATA[/^XMLフィードが下記のrelax NG schemaに従っていること:$/u]]></target>
+            </trans-unit>
+            <trans-unit id="the-atom-feed-should-be-valid">
+                <source><![CDATA[the atom feed should be valid]]></source>
+                <target><![CDATA[/^atomフィードが妥当であること$/u]]></target>
+            </trans-unit>
+            <trans-unit id="the-rss2-feed-should-be-valid">
+                <source><![CDATA[the RSS2 feed should be valid]]></source>
+                <target><![CDATA[/^RSS2フィードが妥当であること$/u]]></target>
+            </trans-unit>
+            <trans-unit id="print-last-xml-response">
+                <source><![CDATA[print last XML response]]></source>
+                <target><![CDATA[最後のXMLレスポンスを表示する]]></target>
+            </trans-unit>
+            <trans-unit id="the-xml-attribute-on-element-should-be-equal-to">
+                <source><![CDATA[the XML attribute :attribute on element :element should be equal to :text]]></source>
+                <target><![CDATA[(この)XMLの :element 要素の :attribute 属性は :text と一致していること]]></target>
+            </trans-unit>
+            <trans-unit id="the-xml-attribute-on-element-should-not-be-equal-to">
+                <source><![CDATA[the XML attribute :attribute on element :element should not be equal to :text]]></source>
+                <target><![CDATA[(この)XMLの :element 要素の :attribute 属性は :text と一致していないこと]]></target>
+            </trans-unit>
+            <trans-unit id="the-xml-attribute-on-element-should-exists">
+                <source><![CDATA[the XML attribute :attribute on element :element should exist(s)]]></source>
+                <target><![CDATA[(この)XMLの :element 要素(に)は :attribute 属性が存在していること]]></target>
+            </trans-unit>
+            <trans-unit id="the-xml-attribute-on-element-should-not-exists">
+                <source><![CDATA[the XML attribute :attribute on element :element should not exist(s)]]></source>
+                <target><![CDATA[(この)XMLの :element 要素(に)は :attribute 属性が存在していないこと]]></target>
+            </trans-unit>
+            <trans-unit id="the-xml-element-should-be-equal-to">
+                <source><![CDATA[the XML element :element should be equal to :text]]></source>
+                <target><![CDATA[(この)XMLの :element 要素は :text と一致していること]]></target>
+            </trans-unit>
+            <trans-unit id="the-xml-element-should-not-be-equal-to">
+                <source><![CDATA[the XML element :element should not be equal to :text]]></source>
+                <target><![CDATA[(この)XMLの :element 要素は :text と一致していないこと]]></target>
+            </trans-unit>
+            <trans-unit id="the-xml-element-should-contain">
+                <source><![CDATA[the XML element :element should contain :text]]></source>
+                <target><![CDATA[(この)XMLの :element 要素は :text を含んでいること]]></target>
+            </trans-unit>
+            <trans-unit id="the-xml-element-should-not-contain">
+                <source><![CDATA[the XML element :element should not contain :text]]></source>
+                <target><![CDATA[(この)XMLの :element 要素は :text を含んでいないこと]]></target>
+            </trans-unit>
+            <trans-unit id="the-xml-element-should-exists">
+                <source><![CDATA[the XML element :element should exist(s)]]></source>
+                <target><![CDATA[(この)XML(に)は :element 要素が存在していること]]></target>
+            </trans-unit>
+            <trans-unit id="the-xml-element-should-not-exists">
+                <source><![CDATA[the XML element :element should not exist(s)]]></source>
+                <target><![CDATA[(この)XML(に)は :element 要素が存在していないこと]]></target>
+            </trans-unit>
+            <trans-unit id="the-xml-element-should-have-elements">
+                <source><![CDATA[the XML element :element should have :count element(s)]]></source>
+                <target><![CDATA[(この)XML(に)は :element 要素を :count 個含んでいること]]></target>
+            </trans-unit>
+            <trans-unit id="the-response-should-be-in-xml">
+                <source><![CDATA[the response should be in XML]]></source>
+                <target><![CDATA[レスポンスがXML(形式)であること]]></target>
+            </trans-unit>
+            <trans-unit id="the-response-should-not-be-in-xml">
+                <source><![CDATA[the response should not be in XML]]></source>
+                <target><![CDATA[レスポンスがXML(形式)でないこと]]></target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

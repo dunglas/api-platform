@@ -1,0 +1,13 @@
+framework:
+    secret:          test_blah
+    router:
+        resource: "%kernel.root_dir%/config/routing.yml"
+        strict_requirements: "%kernel.debug%"
+    form: true
+    validation:      { enable_annotations: true }
+    default_locale:  en
+    trusted_proxies: ~
+    session:         ~
+
+parameters:
+    custom_app: 'behat-test-app'

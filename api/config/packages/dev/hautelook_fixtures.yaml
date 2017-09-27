@@ -1,0 +1,4 @@
+# api/config/packages/dev/hautelook_fixtures.yaml
+
+hautelook_alice:
+    fixtures_path: 'fixtures'

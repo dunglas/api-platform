@@ -1,0 +1,37 @@
+{
+    "name": "behatch/contexts",
+    "description": "Behatch contexts",
+    "keywords": ["BDD", "Behat", "Symfony2", "Context"],
+    "type": "library",
+    "license": "beerware",
+
+    "require": {
+        "php": ">=5.4",
+        "behat/behat": "~3.0",
+        "behat/mink-extension": "~2.0",
+        "justinrainbow/json-schema": "~1.4",
+        "symfony/property-access": "~2.3|~3.0",
+        "symfony/http-foundation": "~2.3|~3.0"
+    },
+
+    "require-dev": {
+        "behat/mink-goutte-driver": "~1.1",
+        "behat/mink-selenium2-driver": "~1.2",
+        "atoum/atoum": "~2.8|~3.0"
+    },
+
+    "autoload": {
+        "psr-4": {
+            "Behatch\\": "src/",
+            "Sanpi\\Behatch\\": "src/class_aliases/"
+        }
+    },
+
+    "config": {
+        "bin-dir": "bin/"
+    },
+
+    "replace": {
+        "sanpi/behatch-contexts": "self.version"
+    }
+}

@@ -1,0 +1,7 @@
+id:
+  generationStrategy: uuid
+  writable: true
+types:
+  Person:
+    properties:
+      name: ~

@@ -1,0 +1,39 @@
+language: php
+
+sudo: false
+
+cache:
+  directories:
+    - $HOME/.composer/cache
+
+php:
+  - 7.1
+  - nightly
+
+matrix:
+  include:
+    - php: 7.1
+      env: deps=low SYMFONY_DEPRECATIONS_HELPER=weak
+    - php: 7.1
+      env: deps=dev
+  allow_failures:
+    - php: nightly
+    - env: deps=dev
+
+env:
+  global:
+    - deps=no
+
+before_install:
+  - composer self-update
+  - if [ "$SYMFONY_VERSION" != "" ]; then composer require --no-update symfony/symfony:${SYMFONY_VERSION}; fi;
+  - if [ "$deps" = "dev" ]; then perl -pi -e 's/^}$/,"minimum-stability":"dev"}/' composer.json; fi;
+
+install:
+  - if [ "$deps" = "low" ]; then composer --prefer-lowest --prefer-stable update; else composer update; fi;
+
+script:
+  - ./vendor/bin/phpunit -v --coverage-clover ./build/logs/clover.xml
+
+after_script:
+    - php ./vendor/bin/coveralls -v

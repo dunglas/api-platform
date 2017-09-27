@@ -1,0 +1,6 @@
+types:
+  Person:
+    properties:
+      name: { writable: false }
+      familyName: { readable: false }
+      friends: { range: "Person", cardinality: (0..*), writable: false }

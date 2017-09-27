@@ -8,4 +8,8 @@ return [
     'Doctrine\Bundle\DoctrineBundle\DoctrineBundle' => ['all' => true],
     'ApiPlatform\Core\Bridge\Symfony\Bundle\ApiPlatformBundle' => ['all' => true],
     'Nelmio\CorsBundle\NelmioCorsBundle' => ['all' => true],
+    'Nelmio\Alice\Bridge\Symfony\NelmioAliceBundle' => ['dev' => true, 'test' => true],
+    'Fidry\AliceDataFixtures\Bridge\Symfony\FidryAliceDataFixturesBundle' => ['dev' => true, 'test' => true],
+    'Hautelook\AliceBundle\HautelookAliceBundle' => ['dev' => true, 'test' => true],
+    'Symfony\Bundle\MonologBundle\MonologBundle' => ['all' => true],
 ];
