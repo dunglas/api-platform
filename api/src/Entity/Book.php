@@ -29,6 +29,7 @@ class Book
      *
      * @ORM\Column(type="text")
      * @Assert\NotBlank
+     * @Groups("review_read")
      */
     public $title;
 

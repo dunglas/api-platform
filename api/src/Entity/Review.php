@@ -11,7 +11,9 @@ use Symfony\Component\Validator\Constraints as Assert;
  * A review.
  *
  * @ORM\Entity
- * @ApiResource
+ * @ApiResource(
+ *     attributes={"normalization_context"={"groups"={"review_read"}}}
+ * )
  */
 class Review
 {
@@ -29,6 +31,7 @@ class Review
      *
      * @ORM\ManyToOne(targetEntity="Book")
      * @Assert\NotNull
+     * @Groups("review_read")
      */
     public $book;
 
@@ -38,6 +41,7 @@ class Review
      * @ORM\Column(type="text")
      * @Assert\NotBlank
      * @Assert\Length(min="5")
+     * @Groups("review_read")
      */
     public $body;
 

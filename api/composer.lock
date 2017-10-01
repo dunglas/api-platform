@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/alanpoulain/core.git",
-                "reference": "bbcead06e283ec200f78c3ec00258b6b2132ab1b"
+                "reference": "0277fafd6853df324c4a834eca70bfaafe9cd0f0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/alanpoulain/core/zipball/bbcead06e283ec200f78c3ec00258b6b2132ab1b",
-                "reference": "bbcead06e283ec200f78c3ec00258b6b2132ab1b",
+                "url": "https://api.github.com/repos/alanpoulain/core/zipball/0277fafd6853df324c4a834eca70bfaafe9cd0f0",
+                "reference": "0277fafd6853df324c4a834eca70bfaafe9cd0f0",
                 "shasum": ""
             },
             "require": {
@@ -127,7 +127,7 @@
             "support": {
                 "source": "https://github.com/alanpoulain/core/tree/feature/graphql"
             },
-            "time": "2017-09-21T12:03:06+00:00"
+            "time": "2017-10-01T17:33:32+00:00"
         },
         {
             "name": "doctrine/annotations",
@@ -545,16 +545,16 @@
         },
         {
             "name": "doctrine/doctrine-bundle",
-            "version": "1.7.0",
+            "version": "1.7.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/DoctrineBundle.git",
-                "reference": "629d2a8b16f99a0b2ba6868f7af9986afee5fea7"
+                "reference": "f8bff22d608224ed88e90b24e9d884cb10b389bb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/DoctrineBundle/zipball/629d2a8b16f99a0b2ba6868f7af9986afee5fea7",
-                "reference": "629d2a8b16f99a0b2ba6868f7af9986afee5fea7",
+                "url": "https://api.github.com/repos/doctrine/DoctrineBundle/zipball/f8bff22d608224ed88e90b24e9d884cb10b389bb",
+                "reference": "f8bff22d608224ed88e90b24e9d884cb10b389bb",
                 "shasum": ""
             },
             "require": {
@@ -622,27 +622,27 @@
                 "orm",
                 "persistence"
             ],
-            "time": "2017-07-28T20:57:50+00:00"
+            "time": "2017-09-29T15:26:21+00:00"
         },
         {
             "name": "doctrine/doctrine-cache-bundle",
-            "version": "1.3.0",
+            "version": "1.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/DoctrineCacheBundle.git",
-                "reference": "18c600a9b82f6454d2e81ca4957cdd56a1cf3504"
+                "reference": "cfc629363a4a1d7b3f21c4689c53aa05519eed52"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/DoctrineCacheBundle/zipball/18c600a9b82f6454d2e81ca4957cdd56a1cf3504",
-                "reference": "18c600a9b82f6454d2e81ca4957cdd56a1cf3504",
+                "url": "https://api.github.com/repos/doctrine/DoctrineCacheBundle/zipball/cfc629363a4a1d7b3f21c4689c53aa05519eed52",
+                "reference": "cfc629363a4a1d7b3f21c4689c53aa05519eed52",
                 "shasum": ""
             },
             "require": {
                 "doctrine/cache": "^1.4.2",
                 "doctrine/inflector": "~1.0",
                 "php": ">=5.3.2",
-                "symfony/doctrine-bridge": "~2.2|~3.0"
+                "symfony/doctrine-bridge": "~2.2|~3.0|~4.0"
             },
             "require-dev": {
                 "instaclick/coding-standard": "~1.1",
@@ -650,15 +650,15 @@
                 "instaclick/symfony2-coding-standard": "dev-remaster",
                 "phpunit/phpunit": "~4",
                 "predis/predis": "~0.8",
-                "satooshi/php-coveralls": "~0.6.1",
+                "satooshi/php-coveralls": "^1.0",
                 "squizlabs/php_codesniffer": "~1.5",
-                "symfony/console": "~2.2|~3.0",
-                "symfony/finder": "~2.2|~3.0",
-                "symfony/framework-bundle": "~2.2|~3.0",
-                "symfony/phpunit-bridge": "~2.7|~3.0",
+                "symfony/console": "~2.2|~3.0|~4.0",
+                "symfony/finder": "~2.2|~3.0|~4.0",
+                "symfony/framework-bundle": "~2.2|~3.0|~4.0",
+                "symfony/phpunit-bridge": "~2.7|~3.0|~4.0",
                 "symfony/security-acl": "~2.3|~3.0",
-                "symfony/validator": "~2.2|~3.0",
-                "symfony/yaml": "~2.2|~3.0"
+                "symfony/validator": "~2.2|~3.0|~4.0",
+                "symfony/yaml": "~2.2|~3.0|~4.0"
             },
             "suggest": {
                 "symfony/security-acl": "For using this bundle to cache ACLs"
@@ -666,7 +666,7 @@
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.2.x-dev"
+                    "dev-master": "1.3.x-dev"
                 }
             },
             "autoload": {
@@ -710,7 +710,7 @@
                 "cache",
                 "caching"
             ],
-            "time": "2016-01-26T17:28:51+00:00"
+            "time": "2017-09-29T14:39:10+00:00"
         },
         {
             "name": "doctrine/inflector",
@@ -1567,16 +1567,16 @@
         },
         {
             "name": "paragonie/random_compat",
-            "version": "v2.0.10",
+            "version": "v2.0.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/paragonie/random_compat.git",
-                "reference": "634bae8e911eefa89c1abfbf1b66da679ac8f54d"
+                "reference": "5da4d3c796c275c55f057af5a643ae297d96b4d8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/paragonie/random_compat/zipball/634bae8e911eefa89c1abfbf1b66da679ac8f54d",
-                "reference": "634bae8e911eefa89c1abfbf1b66da679ac8f54d",
+                "url": "https://api.github.com/repos/paragonie/random_compat/zipball/5da4d3c796c275c55f057af5a643ae297d96b4d8",
+                "reference": "5da4d3c796c275c55f057af5a643ae297d96b4d8",
                 "shasum": ""
             },
             "require": {
@@ -1611,7 +1611,7 @@
                 "pseudorandom",
                 "random"
             ],
-            "time": "2017-03-13T16:27:32+00:00"
+            "time": "2017-09-27T21:40:39+00:00"
         },
         {
             "name": "phpdocumentor/reflection-common",
@@ -2729,21 +2729,21 @@
         },
         {
             "name": "symfony/flex",
-            "version": "v1.0.20",
+            "version": "v1.0.24",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/flex.git",
-                "reference": "18e1d580367425ed6bc5e3046d40ec1d734d45e7"
+                "reference": "dc4b6fbe914c8a96559d0723cb9a02c38347604d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/flex/zipball/18e1d580367425ed6bc5e3046d40ec1d734d45e7",
-                "reference": "18e1d580367425ed6bc5e3046d40ec1d734d45e7",
+                "url": "https://api.github.com/repos/symfony/flex/zipball/dc4b6fbe914c8a96559d0723cb9a02c38347604d",
+                "reference": "dc4b6fbe914c8a96559d0723cb9a02c38347604d",
                 "shasum": ""
             },
             "require": {
                 "composer-plugin-api": "^1.1",
-                "php": "^7.1"
+                "php": "^7.0"
             },
             "require-dev": {
                 "composer/composer": "^1.4",
@@ -2771,7 +2771,7 @@
                     "email": "fabien.potencier@gmail.com"
                 }
             ],
-            "time": "2017-09-14T19:04:54+00:00"
+            "time": "2017-09-29T21:04:50+00:00"
         },
         {
             "name": "symfony/framework-bundle",
@@ -3148,30 +3148,30 @@
         },
         {
             "name": "symfony/monolog-bundle",
-            "version": "v3.1.0",
+            "version": "v3.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/monolog-bundle.git",
-                "reference": "6f96c7dbb6b2ef70b307a1a6f897153cbca3da47"
+                "reference": "80c82d7d41c4eed0bf27e215f27531c05b217c17"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/monolog-bundle/zipball/6f96c7dbb6b2ef70b307a1a6f897153cbca3da47",
-                "reference": "6f96c7dbb6b2ef70b307a1a6f897153cbca3da47",
+                "url": "https://api.github.com/repos/symfony/monolog-bundle/zipball/80c82d7d41c4eed0bf27e215f27531c05b217c17",
+                "reference": "80c82d7d41c4eed0bf27e215f27531c05b217c17",
                 "shasum": ""
             },
             "require": {
                 "monolog/monolog": "~1.22",
                 "php": ">=5.3.2",
-                "symfony/config": "~2.7|~3.0",
-                "symfony/dependency-injection": "~2.7|~3.0",
-                "symfony/http-kernel": "~2.7|~3.0",
-                "symfony/monolog-bridge": "~2.7|~3.0"
+                "symfony/config": "~2.7|~3.0|~4.0",
+                "symfony/dependency-injection": "~2.7|~3.0|~4.0",
+                "symfony/http-kernel": "~2.7|~3.0|~4.0",
+                "symfony/monolog-bridge": "~2.7|~3.0|~4.0"
             },
             "require-dev": {
                 "phpunit/phpunit": "^4.8",
-                "symfony/console": "~2.3|~3.0",
-                "symfony/yaml": "~2.3|~3.0"
+                "symfony/console": "~2.3|~3.0|~4.0",
+                "symfony/yaml": "~2.3|~3.0|~4.0"
             },
             "type": "symfony-bundle",
             "extra": {
@@ -3204,7 +3204,7 @@
                 "log",
                 "logging"
             ],
-            "time": "2017-03-26T11:55:59+00:00"
+            "time": "2017-09-26T03:17:02+00:00"
         },
         {
             "name": "symfony/polyfill-apcu",
@@ -4424,16 +4424,16 @@
         },
         {
             "name": "twig/twig",
-            "version": "v2.4.3",
+            "version": "v2.4.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "eab7c3288ae6603d7d6f92b531626af2b162d1f2"
+                "reference": "eddb97148ad779f27e670e1e3f19fb323aedafeb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/eab7c3288ae6603d7d6f92b531626af2b162d1f2",
-                "reference": "eab7c3288ae6603d7d6f92b531626af2b162d1f2",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/eddb97148ad779f27e670e1e3f19fb323aedafeb",
+                "reference": "eddb97148ad779f27e670e1e3f19fb323aedafeb",
                 "shasum": ""
             },
             "require": {
@@ -4486,7 +4486,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2017-06-07T18:47:58+00:00"
+            "time": "2017-09-27T18:10:31+00:00"
         },
         {
             "name": "webmozart/assert",
@@ -4540,16 +4540,16 @@
         },
         {
             "name": "webonyx/graphql-php",
-            "version": "v0.11.0",
+            "version": "v0.11.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/webonyx/graphql-php.git",
-                "reference": "d46ad091083c196f14d8bc94c35e4b52391fe9b2"
+                "reference": "cb40e111a3467b5befd5a279eecbfbfe0584261b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webonyx/graphql-php/zipball/d46ad091083c196f14d8bc94c35e4b52391fe9b2",
-                "reference": "d46ad091083c196f14d8bc94c35e4b52391fe9b2",
+                "url": "https://api.github.com/repos/webonyx/graphql-php/zipball/cb40e111a3467b5befd5a279eecbfbfe0584261b",
+                "reference": "cb40e111a3467b5befd5a279eecbfbfe0584261b",
                 "shasum": ""
             },
             "require": {
@@ -4583,7 +4583,7 @@
                 "api",
                 "graphql"
             ],
-            "time": "2017-09-20T12:50:23+00:00"
+            "time": "2017-09-22T16:16:34+00:00"
         },
         {
             "name": "willdurand/negotiation",
