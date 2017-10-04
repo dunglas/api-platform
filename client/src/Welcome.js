@@ -1,5 +1,103 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './welcome.css';
+
+const Welcome = () =>
+  <div className="welcome">
+      <header className="welcome__top">
+          <Logo />
+          <a target="_blank" rel="noopener noreferrer" href="https://les-tilleuls.coop"><Flag /></a>
+      </header>
+      <section className="welcome__main">
+          <div className="main__aside">
+              <Crud />
+          </div>
+          <div className="main__content">
+              <h1>
+                  Welcome to <strong>API Platform</strong>!
+              </h1>
+              <div className="main__before-starting">
+                  <p>
+                      This container will host your <b>Progressive Web App</b> (<a href="https://localhost">HTTPS</a>)!<br />
+                      Learn how to create your first API and generate a PWA:
+                  </p>
+
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="https://api-platform.com/docs/"
+                    className="main__button"
+                  >
+                      Get started<Arrow />
+                  </a>
+              </div>
+              <div className="main__other">
+                  <h2>Available services:</h2>
+                  <div className="other__bloc">
+                      <div className="other__circle">
+                          <Api />
+                      </div>
+                      <div className="other__content">
+                          <h3>API</h3>
+                          <LinkButton url="http://localhost:8080" text="HTTP" />
+                          <LinkButton
+                            url="https://localhost:8443"
+                            text="HTTPS"
+                          />
+
+                          <h3>Cached API</h3>
+                          <LinkButton url="http://localhost:8081" text="HTTP" />
+                          <LinkButton
+                            url="https://localhost:8444"
+                            text="HTTPS"
+                          />
+                      </div>
+                  </div>
+                  <div className="other__bloc">
+                      <div className="other__circle">
+                          <Admin />
+                      </div>
+                      <div className="other__content">
+                          <h3>Admin</h3>
+                          <LinkButton
+                            url="http://localhost:81"
+                            text="HTTP"
+                          />
+                          <LinkButton
+                            url="http://localhost:444"
+                            text="HTTPS"
+                          />
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </section>
+      <div className="welcome__help">
+          <h2>Need help ?</h2>
+          <HelpButton
+            url="https://stackoverflow.com/questions/tagged/api-platform.com"
+            Image={Sto}
+            title="Ask your questions on Stack Overflow !"
+          />
+          <HelpButton
+            url="https://symfony.com/slack-invite"
+            Image={Slack}
+            title="Chat with the community on Slack !"
+          />
+      </div>
+  </div>;
+
+const LinkButton = ({ text, url }) =>
+  <a target="_blank" rel="noopener noreferrer" href={url} className="welcome__button">
+      <Link />
+    {text}
+  </a>;
+
+const HelpButton = ({ Image, url, title }) =>
+  <a target="_blank" rel="noopener noreferrer" href={url} className="help__circle" title={title}>
+      <Image />
+  </a>;
+
+export default Welcome;
 
 const Logo = ({ className }) =>
     <svg
@@ -1799,91 +1897,3 @@ const Slack = () =>
             fill="#62803A"
         />
     </svg>;
-
-const LinkButton = ({ text, url }) =>
-    <a className="welcome__button" href={url} target="blank">
-        <Link />
-        {text}
-    </a>;
-
-const HelpButton = ({ Image, url, title }) =>
-    <a href={url} target="blank" className="help__circle" title={title}>
-        <Image />
-    </a>;
-
-const Welcome = () =>
-    <div className="welcome">
-        <header className="welcome__top">
-            <Logo />
-            <a href="https://les-tilleuls.coop/fr" target="blank"><Flag /></a>
-        </header>
-        <section className="welcome__main">
-            <div className="main__aside">
-                <Crud />
-            </div>
-            <div className="main__content">
-                <h1>
-                    Welcome to <strong>scaffolding component</strong>&nbsp;!
-                </h1>
-                <div className="main__before-starting">
-                    <h2>Before starting</h2>
-                    <p className="snippet">
-                        Delete theses files: <strong>client / src / Welcome.js</strong> and <strong>client / src / welcome.css</strong>
-                    </p>
-                    <p className="snippet">
-                        Edit this file: <strong>client / src / App.js</strong>
-                    </p>
-                    <a
-                        className="main__button"
-                        href="https://api-platform.com/docs/"
-                        target="blank"
-                    >
-                        Get started<Arrow />
-                    </a>
-                </div>
-                <div className="main__other">
-                    <h2>Other containers</h2>
-                    <div className="other__bloc">
-                        <div className="other__circle">
-                            <Api />
-                        </div>
-                        <div className="other__content">
-                            <h3>API</h3>
-                            <LinkButton url="http://localhost" text="Dev" />
-                            <LinkButton
-                                url="https://localhost:444"
-                                text="Prod"
-                            />
-                        </div>
-                    </div>
-                    <div className="other__bloc">
-                        <div className="other__circle">
-                            <Admin />
-                        </div>
-                        <div className="other__content">
-                            <h3>Admin</h3>
-                            <LinkButton
-                                url="http://localhost:3000"
-                                text="Go !"
-                            />
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <div className="welcome__help">
-            <h2>Need help ?</h2>
-            <HelpButton
-                url="https://stackoverflow.com/questions/tagged/api-platform.com"
-                Image={Sto}
-                title="Ask your questions on Stack Overflow !"
-            />
-            <HelpButton
-                url="https://symfony.com/slack-invite"
-                Image={Slack}
-                title="Chat with the community on Slack !"
-            />
-        </div>
-    </div>;
-
-export default Welcome;
