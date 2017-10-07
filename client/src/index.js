@@ -4,7 +4,7 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import { reducer as form } from 'redux-form';
-import { Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import createBrowserHistory from 'history/createBrowserHistory';
 import { syncHistoryWithStore, routerReducer as routing } from 'react-router-redux'
 import registerServiceWorker from './registerServiceWorker';
@@ -22,7 +22,7 @@ ReactDom.render(
   <Provider store={store}>
     <Router history={history}>
       <Switch>
-        <Route path="/" component={Welcome}/>
+        <Route path="/" component={Welcome} strict={true} exact={true}/>
         {/* Add your routes here */}
         <Route render={() => <h1>Not Found</h1>}/>
       </Switch>
