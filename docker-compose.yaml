@@ -56,7 +56,7 @@ services:
             - "5432:5432"
 
     client:
-        # Use a static website hosting service production
+        # Use a static website hosting service in production
         # See https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#deployment
         build:
             context: ./client
