@@ -1,105 +1,130 @@
 import React from 'react';
 import './welcome.css';
 
-const Welcome = () =>
-  <div className="welcome">
-      <header className="welcome__top">
-          <Logo />
-          <a target="_blank" rel="noopener noreferrer" href="https://les-tilleuls.coop"><Flag /></a>
-      </header>
-      <section className="welcome__main">
-          <div className="main__aside">
-              <Crud />
-          </div>
-          <div className="main__content">
-              <h1>
-                  Welcome to <strong>API Platform</strong>!
-              </h1>
-              <div className="main__before-starting">
-                  <p>
-                      This container will host your <b>Progressive Web App</b> (<a href="https://localhost">HTTPS</a>)!<br />
-                      Learn how to create your first API and generate a PWA:
-                  </p>
+const Welcome = () => (
+    <div className="welcome">
+        <header className="welcome__top">
+            <Logo />
+            <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://les-tilleuls.coop"
+            >
+                <Flag />
+            </a>
+        </header>
+        <section className="welcome__main">
+            <div className="main__aside">
+                <div className="aside__circle" />
+                <SpiderWelcome />
+            </div>
+            <div className="main__content">
+                <h1>
+                    Welcome to <strong>API Platform</strong>!
+                </h1>
+                <div className="main__before-starting">
+                    <p>
+                        This container will host your <b>Progressive Web App</b>{' '}
+                        (<a href="https://localhost">HTTPS</a>)!<br />
+                        Learn how to create your first API and generate a PWA:
+                    </p>
 
-                  <a
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href="https://api-platform.com/docs/"
-                    className="main__button"
-                  >
-                      Get started<Arrow />
-                  </a>
-              </div>
-              <div className="main__other">
-                  <h2>Available services:</h2>
-                  <div className="other__bloc">
-                      <div className="other__circle">
-                          <Api />
-                      </div>
-                      <div className="other__content">
-                          <h3>API</h3>
-                          <LinkButton url="http://localhost:8080" text="HTTP" />
-                          <LinkButton
-                            url="https://localhost:8443"
-                            text="HTTPS"
-                          />
+                    <a
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href="https://api-platform.com/docs/"
+                        className="main__button"
+                    >
+                        Get started<Arrow />
+                    </a>
+                </div>
+                <div className="main__other">
+                    <h2>Available services:</h2>
+                    <div className="other__bloc">
+                        <div className="other__circle">
+                            <Api />
+                        </div>
+                        <div className="other__content">
+                            <h3>API</h3>
+                            <ButtonsGroup
+                                httpLink="http://localhost:8080"
+                                httpsLink="https://localhost:8443"
+                            />
+                            <h3>Cached API</h3>
+                            <ButtonsGroup
+                                httpLink="http://localhost:8081"
+                                httpsLink="https://localhost:8444"
+                            />
+                        </div>
+                    </div>
+                    <div className="other__bloc">
+                        <div className="other__circle">
+                            <Admin />
+                        </div>
+                        <div className="other__content">
+                            <h3>Admin</h3>
+                            <ButtonsGroup
+                                httpLink="http://localhost:81"
+                                httpsLink="https://localhost:444"
+                            />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div className="welcome__help">
+            <h2>Need help ?</h2>
+            <HelpButton
+                url="https://stackoverflow.com/questions/tagged/api-platform.com"
+                Image={Sto}
+                title="Ask your questions on Stack Overflow !"
+            />
+            <HelpButton
+                url="https://symfony.com/slack-invite"
+                Image={Slack}
+                title="Chat with the community on Slack !"
+            />
+        </div>
+    </div>
+);
 
-                          <h3>Cached API</h3>
-                          <LinkButton url="http://localhost:8081" text="HTTP" />
-                          <LinkButton
-                            url="https://localhost:8444"
-                            text="HTTPS"
-                          />
-                      </div>
-                  </div>
-                  <div className="other__bloc">
-                      <div className="other__circle">
-                          <Admin />
-                      </div>
-                      <div className="other__content">
-                          <h3>Admin</h3>
-                          <LinkButton
-                            url="http://localhost:81"
-                            text="HTTP"
-                          />
-                          <LinkButton
-                            url="http://localhost:444"
-                            text="HTTPS"
-                          />
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </section>
-      <div className="welcome__help">
-          <h2>Need help ?</h2>
-          <HelpButton
-            url="https://stackoverflow.com/questions/tagged/api-platform.com"
-            Image={Sto}
-            title="Ask your questions on Stack Overflow !"
-          />
-          <HelpButton
-            url="https://symfony.com/slack-invite"
-            Image={Slack}
-            title="Chat with the community on Slack !"
-          />
-      </div>
-  </div>;
+const ButtonsGroup = ({ httpLink, httpsLink }) => (
+    <div className="buttons__group">
+        <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href={httpLink}
+            className="other__button"
+        >
+            http
+        </a>
+        <div className="buttons__or" />
+        <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href={httpsLink}
+            className="other__button"
+        >
+            https
+        </a>
+    </div>
+);
 
-const LinkButton = ({ text, url }) =>
-  <a target="_blank" rel="noopener noreferrer" href={url} className="welcome__button">
-      <Link />
-    {text}
-  </a>;
-
-const HelpButton = ({ Image, url, title }) =>
-  <a target="_blank" rel="noopener noreferrer" href={url} className="help__circle" title={title}>
-      <Image />
-  </a>;
+const HelpButton = ({ Image, url, title }) => (
+    <a
+        target="_blank"
+        rel="noopener noreferrer"
+        href={url}
+        className="help__circle"
+        title={title}
+    >
+        <Image />
+    </a>
+);
 
 export default Welcome;
 
-const Logo = ({ className }) =>
+const Logo = ({ className }) => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
         width={150}
@@ -258,9 +283,10 @@ const Logo = ({ className }) =>
         <ellipse className="logost2" cx="191.2" cy={147} rx="9.3" ry="2.3" />
         <ellipse className="logost2" cx="186.6" cy="160.8" rx="9.3" ry="2.3" />
         <ellipse className="logost2" cx="204.3" cy="154.2" rx="9.3" ry="2.3" />
-    </svg>;
+    </svg>
+);
 
-const Flag = () =>
+const Flag = () => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
         width={600}
@@ -388,293 +414,179 @@ const Flag = () =>
             className="flagst1"
             d="M434.9 23.5c0.1 0 0.2 0 0.3 0 0.1 0 0.2 0.1 0.3 0.1 0.1 0 0.2 0.1 0.2 0.2 0.1 0.1 0.1 0.2 0.1 0.3 0 0.1 0 0.2 0 0.4 0 0.1-0.1 0.2-0.2 0.3 -0.1 0.1-0.2 0.2-0.3 0.2 -0.1 0.1-0.3 0.1-0.6 0.1H431c-0.2 0-0.3 0-0.4-0.1 -0.1-0.1-0.2-0.1-0.3-0.2 -0.1-0.1-0.1-0.2-0.1-0.3 0-0.1 0-0.2 0-0.3 0-0.1 0-0.2 0-0.2 0-0.1 0.1-0.2 0.1-0.2 0.1-0.1 0.1-0.1 0.3-0.2 0.1 0 0.3-0.1 0.5-0.1H434.9z"
         />
-    </svg>;
+    </svg>
+);
 
-const Crud = () =>
+const SpiderWelcome = () => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
-        width={400}
-        height={419}
-        viewBox="0 0 400.2 419.4"
+        width="400"
+        height="400"
+        viewBox="0 0 300 300"
     >
         <style
             type="text/css"
             dangerouslySetInnerHTML={{
                 __html:
-                    '  \n\t.crudst0{fill:#FFFFFF;}\n\t.crudst1{fill:#2BA2B2;}\n\t.crudst2{fill:#34AAC0;}\n\t.crudst3{fill:#F69F00;}\n\t.crudst4{fill:#F59E00;}\n\t.crudst5{opacity:0.1;}\n\t.crudst6{fill:#ED9406;}\n\t.crudst7{fill:#C6006D;}\n\t.crudst8{fill:#A50263;}\n\t.crudst9{fill:#6AC700;}\n\t.crudst10{fill:#5B9904;}\n\t.crudst11{opacity:0.2;fill:#1D1E1C;}\n\t.crudst12{fill:#1D1E1C;}\n\t.crudst13{fill:#38A9B4;}\n'
+                    '  \n\t.spiderWelcome0{fill:#1D1E1C;}\n\t.spiderWelcome1{fill:#38A9B4;}\n\t.spiderWelcome2{fill:#FFFFFF;}\n\t.spiderWelcome3{opacity:0.12;fill:#020202;}\n'
             }}
         />
-        <circle className="crudst0" cx="200.2" cy="214.3" r={186} />
-        <title> API platform bordel2</title>
         <polygon
-            className="crudst1"
-            points="318.1 246 210.2 245.9 206.4 213.6 312.6 213.6 "
-        />
-        <polygon
-            className="crudst2"
-            points="318.1 347.2 209.5 347.2 210.3 245.9 318.1 245.9 "
+            className="spiderWelcome0"
+            points="266.4 174.5 271.7 174.9 280.3 126.4 202.1 122 201.9 127.2 274.7 131.4 "
         />
         <path
-            className="crudst0"
-            d="M296 336.9h-64.9c-6.5 0-11.8-5-11.8-11.1l0.4-60.6c0-6.1 5.4-11 11.8-11h64.6c6.5 0 11.8 4.9 11.8 11l0 60.6C307.8 331.9 302.5 336.9 296 336.9z"
+            className="spiderWelcome0"
+            d="M148.7 73l3.1-3.5 27.2 32.4 -15.5 26.3c-1.2 1.1-3 0.8-3.9-0.5l-0.5-0.7c-0.7-1.1-0.5-2.6 0.5-3.4l13.5-21.3L148.7 73z"
         />
         <path
-            className="crudst2"
-            d="M264.8 261.4c8.3 0 14.7 1.8 19.4 5.3 4.7 3.5 7 8.4 7 14.7 0 3.4-1 6.4-3 9 -2 2.5-4.9 4.6-8.7 6.1 4.3 1.2 7.4 3.2 9.3 5.9 1.9 2.8 2.8 6.2 2.8 10.3l0 3.5c0 1.5 0.3 2.7 0.9 3.5 0.6 0.8 1.7 1.3 3.2 1.5l1.8 0.2 0 8.3h-7.6c-4.8 0-8.2-1.2-10.1-3.6 -1.9-2.4-2.9-5.5-2.9-9.4l0-3.9c0-3.3-0.9-5.9-2.8-7.8 -1.9-1.9-4.5-2.9-8-3h-12l-0.1 18.1 7.8 1.4 0 8.2h-30.3l0-8.2 7.8-1.4 0.3-49 -7.7-1.4 0-8.2h7.8H264.8zM254.4 291.4h10.1c4.1 0 7.1-0.8 9.2-2.4 2-1.6 3.1-4 3.1-7 0-3.1-1-5.5-3-7.3 -2-1.8-5-2.7-8.9-2.7h-10.4L254.4 291.4z"
-        />
-        <polygon
-            className="crudst3"
-            points="213.3 350.9 121.9 366.3 121.9 260.1 215.5 245.4 "
+            className="spiderWelcome0"
+            d="M150.6 75.2c0 0 12.1-14.4 8.7-21s-4.8-6.1-9.7-5.3c-4.9 0.8-8 3.9-7.3 9.5C143 63.9 145.1 69.7 150.6 75.2z"
         />
         <path
-            className="crudst0"
-            d="M195.4 343.6l-55.5 9.3c-5.3 0.9-9.7-3.3-9.7-9.4l0.1-64.3c0-6.2 4.5-12.1 9.9-12.9l56.6-9c5.4-0.9 9.7 3.5 9.6 9.8l-1.2 64C205 337 200.6 342.7 195.4 343.6z"
+            className="spiderWelcome0"
+            d="M142.4 73l-3.1-3.5 -27.2 32.4 15.5 25c1.2 1.1 3 0.8 3.9-0.5l0.5-0.7c0.7-1.1 0.5-2.6-0.5-3.4l-13.5-19.9L142.4 73z"
         />
         <path
-            className="crudst4"
-            d="M190.4 291.7l-8.7 1.4 -1.1-8.7c-1.1-1.1-2.6-2-4.3-2.4 -1.7-0.5-3.8-0.5-6.2-0.2 -5.1 0.8-9 3.6-11.8 8.3 -2.8 4.7-4.2 10.4-4.2 17.2l0 2.3c0 6.8 1.3 12 4 15.8 2.7 3.8 6.5 5.2 11.4 4.4 2.3-0.4 4.4-1.1 6.3-2.2 1.9-1.1 3.4-2.3 4.4-3.8l1.3-9 8.6-1.4 -0.2 13.1c-2.4 3.5-5.4 6.4-9 8.8 -3.6 2.4-7.7 4-12.1 4.7 -7.8 1.3-14.1-0.7-19-6 -4.9-5.3-7.4-12.8-7.4-22.5l0-2.2c0-9.7 2.6-18.1 7.6-25.2 5-7.1 11.5-11.3 19.5-12.6 4.5-0.7 8.6-0.4 12.2 0.9 3.6 1.3 6.6 3.3 8.9 6.1L190.4 291.7z"
+            className="spiderWelcome0"
+            d="M140.5 75.2c0 0-12.1-14.4-8.7-21 3.3-6.6 4.8-6.1 9.7-5.3s8 3.9 7.3 9.5C148.1 63.9 146 69.7 140.5 75.2z"
         />
         <polygon
-            className="crudst3"
-            points="121.9 366.5 70.8 334.7 70.8 230 121.9 259.7 "
+            className="spiderWelcome0"
+            points="152.2 34 155.2 30.5 214.6 101.2 177 136.4 173.5 133.3 208 101.6 "
         />
         <path
-            className="crudst0"
-            d="M105.8 345.8l-19.6-12.1c-6-3.7-10.9-11.6-10.9-17.6v-64c0-6 4.9-8 10.9-4.5l19.6 11.5c6.1 3.6 11.2 11.5 11.2 17.6v65C117 347.7 112 349.6 105.8 345.8z"
+            className="spiderWelcome0"
+            d="M154.5 36c0 0 11.7-18 7-25s-6.3-6.3-11.7-4.7 -8.6 5.5-7 11.7S147.4 30.6 154.5 36z"
         />
-        <path
-            className="crudst4"
-            d="M108.3 293.8l-4.8-2.9 -0.7-9.3c-0.6-1.7-1.4-3.2-2.4-4.5 -1-1.3-2.1-2.4-3.4-3.2 -2.8-1.7-4.9-0.8-6.4 2.5 -1.5 3.3-2.3 8.3-2.3 15.1v2.3c0 6.7 0.7 12.7 2.2 17.8 1.5 5.1 3.6 8.5 6.3 10.2 1.3 0.8 2.4 1.1 3.5 1 1.1-0.1 1.9-0.7 2.5-1.6l0.7-8.5 4.8 2.9v13.2c-1.3 2.3-3 3.8-5 4.4 -2 0.6-4.3 0.1-6.8-1.4 -4.3-2.7-7.8-7.9-10.6-15.7 -2.7-7.8-4.1-16.5-4.1-26.2v-2.2c0-9.6 1.4-16.7 4.1-21.3 2.7-4.6 6.2-5.6 10.6-3.1 2.5 1.5 4.7 3.7 6.8 6.8 2 3.1 3.7 6.5 5 10.4V293.8z"
-        />
-        <g className="crudst5">
-            <polygon points="121.9 366.5 70.8 334.7 70.8 230 121.9 259.7 " />
-        </g>
         <polygon
-            className="crudst6"
-            points="215.9 245.9 166.1 216.4 71.3 230.2 121.9 260.6 "
+            className="spiderWelcome0"
+            points="139 34 135.9 30.5 76.5 101.2 114.2 136.4 117.6 133.3 83.2 101.6 "
+        />
+        <path
+            className="spiderWelcome0"
+            d="M136.7 36c0 0-11.7-18-7-25 4.7-7 6.3-6.3 11.7-4.7 5.5 1.6 8.6 5.5 7 11.7C146.8 24.3 143.7 30.6 136.7 36z"
+        />
+        <polygon
+            className="spiderWelcome0"
+            points="136.6 271 122 176.6 161.1 159.1 160.6 164.3 127.9 179.6 141.8 271 "
+        />
+        <path
+            className="spiderWelcome0"
+            d="M132 279.3c0 0-6.3 8.9 2.6 14.1 8.9 5.2 14.5-2.6 14.5-2.6s1.2-3.6-2.3-12.2c-3.6-8.6-4.7-10.5-7.3-11.3C136.9 266.5 132 279.3 132 279.3z"
+        />
+        <polygon
+            className="spiderWelcome0"
+            points="174.6 271 189.2 176.6 150.1 159.1 150.6 164.3 183.3 179.6 169.4 271 "
+        />
+        <path
+            className="spiderWelcome0"
+            d="M179.2 279.3c0 0 6.3 8.9-2.6 14.1 -8.9 5.2-14.5-2.6-14.5-2.6s-1.2-3.6 2.3-12.2c3.6-8.6 4.7-10.5 7.3-11.3C174.3 266.5 179.2 279.3 179.2 279.3z"
+        />
+        <path
+            className="spiderWelcome1"
+            d="M203.1 155.6c0 28.1-24.5 42.9-54.7 42.9s-53.2-14.8-53.2-42.9 23-48.7 53.2-48.7S203.1 127.5 203.1 155.6z"
+        />
+        <path
+            className="spiderWelcome0"
+            d="M147.7 200.8c-16 0-29.6-4-39.5-11.5 -10.6-8-16.2-19.7-16.2-33.8 0-26.2 19.3-51.1 55.7-51.1 36.9 0 57.2 25.2 57.2 51.1 0 14-5.9 25.7-17 33.8C177.9 196.7 163.6 200.8 147.7 200.8zM147.7 109.1c-33.6 0-50.6 22.9-50.6 46.4 0 25 19.4 40.6 50.6 40.6 31.7 0 52.1-15.9 52.1-40.6C199.9 126.2 171.5 109.1 147.7 109.1z"
+        />
+        <ellipse
+            className="spiderWelcome2"
+            cx="124.4"
+            cy="118.7"
+            rx="25.7"
+            ry="25.2"
+        />
+        <path
+            className="spiderWelcome0"
+            d="M123.7 145.5c-15.1 0-27.3-12-27.3-26.8 0-14.8 12.3-26.8 27.3-26.8s27.3 12 27.3 26.8C151.1 133.5 138.8 145.5 123.7 145.5zM123.7 95.1c-13.3 0-24.1 10.6-24.1 23.6 0 13 10.8 23.6 24.1 23.6 13.3 0 24.1-10.6 24.1-23.6C147.8 105.7 137 95.1 123.7 95.1z"
+        />
+        <ellipse
+            className="spiderWelcome0"
+            cx="126.4"
+            cy="120.2"
+            rx="11.6"
+            ry="11.2"
+        />
+        <circle className="spiderWelcome2" cx="124.2" cy="118.2" r="3.2" />
+        <ellipse
+            className="spiderWelcome2"
+            cx="175.1"
+            cy="122.3"
+            rx="31.1"
+            ry="32.2"
+        />
+        <path
+            className="spiderWelcome0"
+            d="M174.4 156.2c-18.1 0-32.8-15.2-32.8-33.8 0-18.7 14.7-33.8 32.8-33.8 18.1 0 32.8 15.2 32.8 33.8C207.2 141 192.5 156.2 174.4 156.2zM174.4 91.7c-16.3 0-29.5 13.7-29.5 30.6 0 16.9 13.2 30.6 29.5 30.6s29.5-13.7 29.5-30.6C203.9 105.5 190.7 91.7 174.4 91.7z"
+        />
+        <circle className="spiderWelcome0" cx="177" cy="124" r="14.3" />
+        <circle className="spiderWelcome2" cx="184.8" cy="121.8" r="4" />
+        <rect
+            x="29.7"
+            y="162.6"
+            transform="matrix(0.9931 -0.1171 0.1171 0.9931 -21.2869 18.5462)"
+            className="spiderWelcome3"
+            width="235.1"
+            height="55.8"
         />
         <rect
-            x="221.4"
-            y="132.6"
-            className="crudst7"
-            width="105.9"
-            height="105.9"
+            x="28.3"
+            y="161.4"
+            transform="matrix(0.9931 -0.1171 0.1171 0.9931 -20.9551 18.1347)"
+            className="spiderWelcome2"
+            width="231.3"
+            height="52.1"
         />
         <path
-            className="crudst0"
-            d="M305.3 227.8h-62.5c-6.6 0-12-5.4-12-12v-62.5c0-6.6 5.4-12 12-12h62.5c6.6 0 12 5.4 12 12v62.5C317.3 222.4 311.9 227.8 305.3 227.8z"
+            className="spiderWelcome1"
+            d="M30.8 228.5l-6.4-54.7 1.5-0.2L257 146.4l6.4 54.7 -1.5 0.2L30.8 228.5zM27.7 176.4l5.7 48.7 226.7-26.7 -5.7-48.7L27.7 176.4z"
         />
         <path
-            className="crudst7"
-            d="M277.3 148.9c8.6 0 15.7 2.7 21.2 8.2 5.6 5.5 8.3 12.5 8.3 21.1v11.6c0 8.6-2.8 15.7-8.3 21.1 -5.6 5.5-12.6 8.2-21.2 8.2h-31.6v-8.4l7.5-1.4v-50.4l-7.5-1.4v-8.5h7.5H277.3zM267.3 159.7v48.6h9.3c5.1 0 9-1.7 11.9-5.1 2.9-3.4 4.3-7.9 4.3-13.4v-11.7c0-5.4-1.4-9.9-4.3-13.3 -2.9-3.4-6.8-5.1-11.9-5.1H267.3z"
+            className="spiderWelcome1"
+            d="M67.5 212.9l-4.1-3.4 -3.3 4.3c-1.7 2.2-4.6 2.6-6.8 0.8l-5.4-4.6c-1.8-1.6-3.2-2.6-3.7-4.9l-2.2-18.8c-0.7-5.6 7.8-6.6 8.4-1 0.8 7.1 1.7 14.7 2.6 21.8l5.7-0.7c-0.8-7.1-1.7-14.6-2.6-21.8 -0.7-5.7 8-6.7 8.6-1 0.8 7.1 1.7 14.7 2.6 21.8l5.7-0.7c-0.8-7.1-1.7-14.6-2.6-21.8 -0.7-5.6 7.8-6.6 8.4-1l2.2 18.8c0.1 2.4-1.1 3.6-2.4 5.6l-4.3 5.7C72.5 214.4 69.6 214.7 67.5 212.9z"
+        />
+        <path
+            className="spiderWelcome1"
+            d="M89.8 185.1c0.2 1.6 0.4 3 0.5 4.5 3.2-0.4 6.3-0.7 9.6-1.1 2.3-0.3 4.5 1.4 4.8 3.8 0.3 2.3-1.5 4.5-3.8 4.8 -3.2 0.4-6.4 0.8-9.6 1.1 0.2 1.4 0.3 2.8 0.5 4.1l10.4-1.2c2.4-0.3 4.5 1.4 4.8 3.8 0.3 2.3-1.5 4.4-3.8 4.8 -4.7 0.6-7.1 0.8-11.8 1.4 -3.9 0.5-7.6-2.4-8-6.4l-0.3-2.7c-0.4-3.4-0.3-6.4 3.4-8.2 -3.7-0.8-4.7-3.4-5.1-6.8 -0.1-0.7-0.2-1.6-0.3-2.3 -0.5-4 2.4-7.7 6.3-8.1 4.8-0.6 7.1-0.8 11.8-1.4 2.4-0.3 4.5 1.4 4.8 3.7 0.3 2.4-1.4 4.6-3.8 4.9L89.8 185.1z"
+        />
+        <path
+            className="spiderWelcome1"
+            d="M108.2 201.6c-0.9-7.6-1.8-15.2-2.7-22.9 -0.3-2.3 1.5-4.5 3.8-4.7 2.5-0.3 4.6 1.4 4.9 3.7l2.6 21.8c4.3-0.5 3.1-0.5 7.4-1 5.6-0.7 6.7 8 1 8.6 -3.9 0.5-6.2 0.7-8.6 1C112.5 208.6 108.7 205.7 108.2 201.6z"
+        />
+        <path
+            className="spiderWelcome1"
+            d="M133.8 171.2l11.9-1.4c2.3-0.3 4.6 1.5 4.8 3.8 0.3 2.3-1.5 4.5-3.8 4.8l-10.6 1.2 2 17.3 10.5-1.2c2.4-0.3 4.5 1.4 4.8 3.8 0.3 2.4-1.5 4.5-3.8 4.7l-11.8 1.4c-4 0.5-7.7-2.4-8.1-6.4l-2.3-19.8C127 175.4 129.8 171.7 133.8 171.2z"
+        />
+        <path
+            className="spiderWelcome1"
+            d="M158.9 168.3l9.8-1.2c3.9-0.5 7.6 2.3 8.1 6.4l2.3 19.7c0.4 3.5-2.5 7.7-6.2 8.1l-10.3 1.2c-3.6 0.4-7.7-2.9-8.1-6.4l-2.3-19.7C151.8 172.2 155 168.8 158.9 168.3zM168.5 175.9l-7.4 0.9 2 17.2 7.4-0.9L168.5 175.9z"
+        />
+        <path
+            className="spiderWelcome1"
+            d="M192.9 165.6l4.2 3.5 3.3-4.4c1.8-2.4 4.8-2.8 6.9-0.8l5.6 4.6c1.7 1.5 3.1 2.5 3.7 4.8l2.2 18.7c0.7 5.6-8 6.6-8.6 1 -0.9-7.2-1.7-14.5-2.6-21.8l-5.7 0.7c0.9 7.2 1.7 14.5 2.6 21.8 0.7 5.7-7.9 6.7-8.6 1 -0.9-7.2-1.7-14.5-2.6-21.8l-5.6 0.7c0.9 7.2 1.7 14.5 2.6 21.8 0.7 5.6-8 6.6-8.6 1l-2.2-18.7c-0.2-2.4 1.1-3.7 2.4-5.6l4.4-5.8C187.8 164 190.8 163.7 192.9 165.6z"
+        />
+        <path
+            className="spiderWelcome1"
+            d="M226.8 169c0.2 1.6 0.4 3 0.5 4.5 3.2-0.4 6.3-0.7 9.6-1.1 2.3-0.3 4.5 1.4 4.8 3.8 0.3 2.3-1.5 4.5-3.8 4.8 -3.2 0.4-6.4 0.8-9.6 1.1 0.2 1.4 0.3 2.8 0.5 4.1l10.4-1.2c2.4-0.3 4.5 1.4 4.8 3.8 0.3 2.3-1.5 4.4-3.8 4.8 -4.7 0.6-7.1 0.8-11.8 1.4 -3.9 0.5-7.6-2.4-8-6.4l-0.3-2.7c-0.4-3.4-0.3-6.4 3.4-8.2 -3.7-0.8-4.7-3.4-5.1-6.8 -0.1-0.7-0.2-1.6-0.3-2.3 -0.5-4 2.4-7.7 6.3-8.1 4.8-0.6 7.1-0.8 11.8-1.4 2.4-0.3 4.5 1.4 4.8 3.7 0.3 2.4-1.4 4.6-3.8 4.9L226.8 169z"
         />
         <polygon
-            className="crudst7"
-            points="222.3 238.5 206.7 225.3 206.7 109.6 222.3 132.6 "
+            className="spiderWelcome0"
+            points="37.9 184.8 32.6 185.2 38.5 133.3 97 144.8 97.2 150.1 44.1 138.3 "
         />
         <path
-            className="crudst0"
-            d="M214.8 221L214.8 221c-3.6-3.2-6.6-9.1-6.6-12.9v-79.9c0-3.8 3-2.6 6.6 2.5v0c3.4 4.9 6.2 11.6 6.2 15.2v74.3C220.9 223.7 218.2 224.1 214.8 221z"
+            className="spiderWelcome0"
+            d="M33.6 182.5c0 0-10.2 22.2-3.8 29.3s8.1 6 14 3.3 8.8-7.6 6-14.4C47 194 42.5 187.5 33.6 182.5z"
         />
         <path
-            className="crudst7"
-            d="M215.3 139.2c1.3 1.7 2.3 5.9 3.1 12.6 0.8 6.6 1.2 14.3 1.2 23v11.8c0 8.8-0.4 15.5-1.2 20.3 -0.8 4.8-1.8 6.6-3.1 5.4l-4.8-4.6v-9l1.2-0.4v-53.6l-1.2-3.1v-9.1l1.2 1.6L215.3 139.2zM213.8 148.6v51l1.4 1.4c0.7 0.8 1.3-0.4 1.7-3.5 0.4-3.1 0.6-7.4 0.6-13.1v-12.1c0-5.6-0.2-10.4-0.6-14.4 -0.4-4.1-1-6.6-1.7-7.5L213.8 148.6z"
+            className="spiderWelcome0"
+            d="M273.5 167.6c0.1-0.4-6.7 24.4-14 26 -9.4 2-10.1 0.2-13.3-5.4 -3.2-5.6-2.7-11.3 3.5-15.2C255.9 169.1 263.4 166.5 273.5 167.6z"
         />
-        <polygon
-            className="crudst5"
-            points="222.3 238.5 206.7 225.3 206.7 109.6 222.3 132.6 "
-        />
-        <polygon
-            className="crudst8"
-            points="206.7 109.6 308 109.6 328.2 132.6 221.4 132.6 "
-        />
-        <rect
-            x={109}
-            y="146.4"
-            className="crudst9"
-            width="106.8"
-            height="111.4"
-        />
-        <path
-            className="crudst0"
-            d="M193.8 246.6h-63.2c-6.6 0-12-5.4-12-12v-67c0-6.6 5.4-12 12-12h63.2c6.6 0 12 5.4 12 12v67C205.8 241.2 200.4 246.6 193.8 246.6z"
-        />
-        <path
-            className="crudst9"
-            d="M156.6 169.1v7.9l-6.7 1.3v34.1c0 4.3 1.1 7.5 3.3 9.7 2.2 2.1 5.3 3.2 9.1 3.2 3.9 0 7-1.1 9.2-3.2 2.2-2.1 3.4-5.4 3.4-9.7v-34.1l-6.7-1.3v-7.9h25.9v7.9l-6.7 1.3v34.1c0 7.3-2.3 13-6.9 17 -4.6 4-10.7 6-18.2 6 -7.5 0-13.5-2-18.1-6 -4.6-4-6.9-9.6-6.9-17v-34.1l-6.7-1.3v-7.9h6.7 12.6H156.6z"
-        />
-        <polygon
-            className="crudst9"
-            points="109.3 257.8 94.1 234.2 94.2 123.1 109.1 146.2 "
-        />
-        <path
-            className="crudst0"
-            d="M102.6 236l-2-3c-2.9-4.5-5.2-10.8-5.2-14.2l0.1-78.7c0-3.3 2.3-2.3 5.2 2l1.9 3c2.8 4.4 5.2 10.6 5.2 13.9l0.1 79C107.8 241.4 105.5 240.5 102.6 236z"
-        />
-        <path
-            className="crudst9"
-            d="M100.8 155.8l0 7.8 -0.9-0.1 0 34c0 4.3 0.2 7.8 0.5 10.4 0.3 2.6 0.7 4.4 1.3 5.2 0.6 0.9 1 0.5 1.3-1.2 0.3-1.6 0.5-4.6 0.5-9l0-34 -0.9-2.8 0-7.8 3.6 5.6 0 7.8 -0.9-0.1 0 34c0 7.4-0.3 12.6-1 15.5 -0.7 3-1.5 3.7-2.6 2 -1.1-1.6-1.9-5-2.6-10 -0.7-5-1-11.2-1-18.5l0-33.9 -0.9-2.8 0-7.8 0.9 1.4 1.8 2.7L100.8 155.8z"
-        />
-        <polygon
-            className="crudst5"
-            points="109.3 257.8 94.1 234.2 94.2 123.1 109.1 146.2 "
-        />
-        <polygon
-            className="crudst10"
-            points="94.3 123.4 195.6 123.4 215.9 146.4 109 146.4 "
-        />
-        <ellipse
-            className="crudst11"
-            cx="133.6"
-            cy="136.3"
-            rx="12.1"
-            ry="3.3"
-        />
-        <polygon
-            className="crudst12"
-            points="156.7 126.1 153.9 126.1 138.4 36.2 163.2 46.2 161.3 48.1 141.8 41.1 "
-        />
-        <polygon
-            className="crudst12"
-            points="138.8 124.5 137.5 129 123.4 36.8 165.4 54.3 162.9 56.3 127.2 41.2 "
-        />
-        <polygon
-            className="crudst12"
-            points="174.2 132.7 138.9 65 175.8 68.7 176.9 71.4 144.9 68.4 178 134.4 "
-        />
-        <polyline
-            className="crudst12"
-            points="190.8 47.6 191.6 122.7 188.4 122.3 186.9 44.8 "
-        />
-        <path
-            className="crudst12"
-            d="M188.2 120.9c0 0-3.6-6.3-7.4-2.3 -3.9 4-1.6 9.6-1.6 9.6s1.3 1.7 5.6 1.9c4.3 0.2 5.4 0 6.2-1.3 0.8-1.3 0.7-7.4 0.7-7.4L188.2 120.9z"
-        />
-        <path
-            className="crudst12"
-            d="M137.6 127.6c1.1 1.7-7.5-8.9-12.7-4.2 -6.3 5.6-2.7 13.4-2.7 13.4s2.1 1.9 9.1 1.9c9.2 0 8.5-2.4 9.1-4.8 1.1-4-2.3-12.3-2.3-12.3L137.6 127.6z"
-        />
-        <path
-            className="crudst12"
-            d="M153.9 124.1c0 0-1.7-5.9-5.8-2.2 -2.5 2.2-2.6 4.9-2.4 6.8 0.2 1.5 1.3 2.7 2.8 3 0.9 0.2 2.2 0.4 3.8 0.4 6.1-0.3 5.2-2.2 5.3-3.1 0.1-5.1-1.8-8.3-1.8-8.3L153.9 124.1z"
-        />
-        <path
-            className="crudst12"
-            d="M173.2 131.3c0 0-5.3-9.2-11.8-3.6 -6.5 5.6-1.7 12.9-1.7 12.9s2.1 2.3 9.3 2.3c9.4 0 10.2-4.8 9.5-7.2 -3.2-11.3-8 3.4-3.8-4.7L173.2 131.3z"
-        />
-        <polygon
-            className="crudst12"
-            points="246 108 249.3 108 257.1 42.2 218.3 62.8 219.1 67.7 252.8 48.2 "
-        />
-        <polygon
-            className="crudst12"
-            points="259.7 120.7 263.4 123.8 261.6 80.1 217.1 68.4 214 72.4 258.1 83.4 "
-        />
-        <polygon
-            className="crudst12"
-            points="228.3 120.8 216.7 87.6 194.3 70.4 193.2 74.1 214.7 90.5 224.9 120.7 "
-        />
-        <polyline
-            className="crudst12"
-            points="213.1 65.4 230.8 106.6 234 107.8 217.1 62.6 "
-        />
-        <path
-            className="crudst12"
-            d="M234.1 106.5c0 0 3.1-6.3 6.9-2.3 3.9 4 1.6 9.6 1.6 9.6s-1.3 1.7-5.6 1.9c-4.3 0.2-5.4 0-6.2-1.3s0.1-11.2 0.1-11.2L234.1 106.5z"
-        />
-        <path
-            className="crudst12"
-            d="M263.9 119.5c0 0 5.4-10.3 11.7-4.7 3.6 3.2 4 7 3.6 9.8 -0.3 2.5-2.2 4.5-4.7 5 -1.3 0.3-3.1 0.5-5.4 0.5 -9.2 0-9-3.4-9.6-5.8 -1.1-4 1.3-7.9 1.3-7.9L263.9 119.5z"
-        />
-        <path
-            className="crudst12"
-            d="M249.3 107.1c0 0 3.2-7.4 7.3-3.7 2.4 2.1 2.6 4.7 2.4 6.5 -0.2 1.7-1.4 3-3.1 3.3 -0.9 0.2-2.1 0.3-3.6 0.3 -6.1 0-6.3-1.5-6.8-3.1 -0.7-2.6 1.8-9.3 1.8-9.3L249.3 107.1z"
-        />
-        <path
-            className="crudst12"
-            d="M227.9 119.7c0 0 4.8-8.7 11.3-3.1 6.5 5.6 2.7 13.4 2.7 13.4s-2.1 2.3-9.3 2.3c-9.4 0-9.9-4.7-9.5-7.2 1.5-10.3 3.3-7.7 3.3-7.7L227.9 119.7z"
-        />
-        <path
-            className="crudst13"
-            d="M218 10c22.8 17.2 21.7 30.1 6.3 50.6 -12.2 16.1-31.2 21-49.7 7s-15.7-31.1-3.6-47.2C183.1 4.2 199.4-4 218 10z"
-        />
-        <path
-            className="crudst12"
-            d="M225.5 62.1c-6.4 8.5-14.5 13.8-23.5 15.4 -9.6 1.6-19.5-1.2-28.8-8.2 -17.3-13.1-18.7-30.3-4.1-49.7C184-0.1 201.6-3.9 218.7 9c9.3 7 17.4 15.5 18.3 25.5C237.8 43.6 231.9 53.6 225.5 62.1zM172.2 21.9c-13.5 17.9-12.5 33 3.1 44.7 16.5 12.5 34.6 9.9 47.2-6.8 16-21.2 14.8-32.5-5.8-48C197.3-2.9 181.8 9.2 172.2 21.9z"
-        />
-        <path
-            className="crudst0"
-            d="M178.5 35.3c5.4 12.6 3.8 25.1-3.7 28.3s-17.9-4.5-23.3-17.1 -3.6-21.4 3.9-24.6S173.1 22.6 178.5 35.3z"
-        />
-        <path d="M154.5 20.9c-3.9 1.7-6.5 5.7-7.3 11.5 -0.8 5.7 0.3 8.4 3 14.8 2.7 6.4 6.8 11.9 11.5 15.3 4.7 3.4 9.4 4.4 13.3 2.8 1.7-0.7 3.1-1.8 4.2-3.3 4.2-5.6 4.4-16.1-0.1-26.7C173.4 21.8 162.3 17.6 154.5 20.9zM173.9 62.5c-7 3-16.7-4.3-21.7-16.1 -2.4-5.7-3.4-7.7-2.7-12.8 0.4-2.9 1.3-5.4 2.7-7.2 1-1.3 2.2-2.3 3.6-2.9 3.3-1.4 7.4-0.5 11.4 2.6 4.1 3.1 7.6 4 10.1 9.8C182.3 48 180.8 59.6 173.9 62.5z" />
-        <ellipse
-            transform="matrix(0.7753 -0.6316 0.6316 0.7753 4.2868 114.5271)"
-            className="crudst12"
-            cx="163.1"
-            cy="51.2"
-            rx="5.1"
-            ry="11.1"
-        />
-        <ellipse
-            transform="matrix(0.762 -0.6476 0.6476 0.762 4.5065 119.821)"
-            className="crudst0"
-            cx="165.2"
-            cy="53.8"
-            rx="2.3"
-            ry={3}
-        />
-        <path
-            className="crudst0"
-            d="M191.5 32.4c4.5 10.6 2.9 21.4-3.6 24.2 -6.5 2.7-15.4-3.6-19.9-14.2 -4.5-10.6-2.9-18.9 3.6-21.6S187 21.8 191.5 32.4z"
-        />
-        <path d="M170.7 19.6c-3.4 1.4-5.7 5-6.4 9.9 -0.7 4.9 0.2 8.1 2.5 13.6 2.3 5.5 5.8 10.1 9.9 13 4.1 2.9 8.2 3.7 11.6 2.3 1.5-0.6 2.7-1.6 3.7-3 3.7-4.9 4-14.1 0.2-23.1C187.3 21 177.7 16.6 170.7 19.6zM190.2 33.2c3.3 7.7 3.1 15.6-0.1 19.8 -0.8 1.1-1.9 2-3.1 2.5 -2.8 1.2-6.3 0.5-9.7-1.9 -3.5-2.5-6.5-6.5-8.5-11.2 -3.3-7.7-3.1-13.1 0.1-17.3 0.8-1.1 1.9-2 3.1-2.5 2.8-1.2 6.8-1 10.2 1.4C185.6 26.5 188.2 28.4 190.2 33.2z" />
-        <ellipse
-            transform="matrix(0.7433 -0.6689 0.6689 0.7433 14.5546 131.4371)"
-            className="crudst12"
-            cx="178.5"
-            cy="46.8"
-            rx="4.7"
-            ry="9.2"
-        />
-        <ellipse
-            transform="matrix(0.7601 -0.6499 0.6499 0.7601 11.7445 128.5198)"
-            className="crudst0"
-            cx="179.9"
-            cy="48.4"
-            rx={2}
-            ry="2.6"
-        />
-        <ellipse
-            className="crudst11"
-            cx="164.9"
-            cy="140.3"
-            rx="13.3"
-            ry="4.3"
-        />
-        <ellipse className="crudst11" cx="150.8" cy="129.9" rx="7.8" ry="3.5" />
-        <ellipse className="crudst11" cx="184.6" cy="129.1" rx="8.8" ry="3.5" />
-        <ellipse
-            className="crudst11"
-            cx="276.5"
-            cy="127.8"
-            rx="12.1"
-            ry="3.3"
-        />
-        <ellipse
-            className="crudst11"
-            cx="235.9"
-            cy="127.8"
-            rx="13.3"
-            ry="4.3"
-        />
-        <ellipse className="crudst11" cx="254.3" cy="112.8" rx="7.8" ry="3.5" />
-        <path
-            className="crudst11"
-            d="M224 115.1c0 1.9 3.9 3.5 8.8 3.5s8.8-1.6 8.8-3.5c0-1.9-0.3-4.4-5.1-4.4S224 113.2 224 115.1z"
-        />
-    </svg>;
+    </svg>
+);
 
-const Api = () =>
+const Api = () => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
         width={100}
@@ -941,9 +853,10 @@ const Api = () =>
             className="apist18"
             d="M150 121.4c0 0-21.5-2.6-18.9-18.6s17.6-15 17.6-15 5.4 2.1 11.9 15.3c8.6 17.1 3.2 20.1-0.5 22"
         />
-    </svg>;
+    </svg>
+);
 
-const Admin = () =>
+const Admin = () => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
         width={100}
@@ -1791,9 +1704,10 @@ const Admin = () =>
             width="3.2"
             height={19}
         />
-    </svg>;
+    </svg>
+);
 
-const Arrow = () =>
+const Arrow = () => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
         width={26}
@@ -1807,39 +1721,20 @@ const Arrow = () =>
                     '  \n\t.linkst0{clip-path:url(#SVGID_2_);fill:#38A9B4;}\n'
             }}
         />
-        <defs><rect width="25.9" height={18} /></defs>
+        <defs>
+            <rect width="25.9" height={18} />
+        </defs>
         <path
             className="linkst0"
             d="M17 0.3c-0.3-0.4-0.9-0.4-1.3 0 -0.3 0.3-0.3 0.9 0 1.3L22.1 8H0.9C0.4 8 0 8.4 0 8.9c0 0.5 0.4 0.9 0.9 0.9h21.2l-6.4 6.4c-0.3 0.4-0.3 0.9 0 1.3 0.4 0.4 0.9 0.4 1.3 0l8-8c0.4-0.3 0.4-0.9 0-1.3L17 0.3zM17 0.3"
         />
-    </svg>;
+    </svg>
+);
 
-const Link = () =>
+const Sto = () => (
     <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width={12}
-        height={12}
-        viewBox="-49 141 512 512"
-    >
-        <style dangerouslySetInnerHTML={{ __html: '.a{fill:#FFF;}' }} />
-        <path
-            d="M184.9 503.9c-2.3 15.8-9.6 30.8-21.2 42.4l-24.8 24.7c-14.6 14.6-33.8 21.9-53 21.9s-38.4-7.3-53-21.9c-1.8-1.8-3.4-3.6-5-5.5C16.9 552.1 10.9 535.5 10.9 518s6-34.1 17-47.5c1.6-1.9 3.2-3.8 5-5.5l24.8-24.7c11.6-11.6 26.6-18.9 42.4-21.2l53.8-53.8c-13.8-4.6-28.4-7.1-43.1-7.1 -36.1 0-70 14-95.5 39.5l-24.8 24.7c-52.6 52.6-52.6 138.3 0 190.9C16 639 49.9 653 86 653s70-14 95.5-39.5l24.8-24.7c36.9-36.8 48.7-90.8 32.5-138.6L184.9 503.9z"
-            className="a"
-        />
-        <path
-            d="M423.5 180.5C398 155 364 141 328 141c-36.1 0-70 14-95.5 39.5L207.8 205.3c-36.9 36.8-48.7 90.8-32.5 138.6l53.8-53.8c2.3-15.8 9.6-30.8 21.2-42.4l24.8-24.7c29.2-29.2 76.8-29.2 106.1 0 29.2 29.2 29.2 76.8 0 106.1l-24.8 24.7c-11.6 11.6-26.6 18.9-42.4 21.2l-53.8 53.8c13.8 4.6 28.4 7.1 43.1 7.1 36.1 0 70-14 95.5-39.5l24.8-24.7C449 346 463 312.1 463 276S449 206 423.5 180.5z"
-            className="a"
-        />
-        <path
-            d="M96.6 507.4c11.7 11.7 30.7 11.7 42.4 0l178.4-178.4c11.7-11.7 11.7-30.7 0-42.4 -11.7-11.7-30.7-11.7-42.4 0L96.6 465C84.8 476.7 84.8 495.7 96.6 507.4z"
-            className="a"
-        />
-    </svg>;
-
-const Sto = () =>
-    <svg
-        width={30}
-        height={30}
+        width={25}
+        height={25}
         viewBox="0 0 120 120"
         style={{ enableBackground: 'new 0 0 120 120' }}
     >
@@ -1858,13 +1753,14 @@ const Sto = () =>
             d="M38.8,68.4l37.8,7.9l1.6-7.6l-37.8-7.9L38.8,68.4z M43.8,50.4l35,16.3l3.2-7l-35-16.4L43.8,50.4z M53.5,33.2
 	l29.7,24.7l4.9-5.9L58.4,27.3L53.5,33.2z M72.7,14.9l-6.2,4.6l23,31l6.2-4.6L72.7,14.9z M38,86h38.6v-7.7H38V86z"
         />
-    </svg>;
+    </svg>
+);
 
-const Slack = () =>
+const Slack = () => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
-        width={30}
-        height={30}
+        width={24}
+        height={24}
         viewBox="0 0 120 120"
     >
         <path
@@ -1896,4 +1792,5 @@ const Slack = () =>
             d="M66.5 47.9l16.5-5.4c-1.8-5.5-3.6-11-5.4-16.5l-16.5 5.4L66.5 47.9"
             fill="#62803A"
         />
-    </svg>;
+    </svg>
+);
