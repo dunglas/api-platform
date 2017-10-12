@@ -7,10 +7,8 @@ import { reducer as form } from 'redux-form';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import createBrowserHistory from 'history/createBrowserHistory';
 import { syncHistoryWithStore, routerReducer as routing } from 'react-router-redux';
-// Bootstrap and Font Awesome (optional)
-// Run `yarn add bootstrap@4.0.0-beta font-awesome` and uncomment the next two lines
-//import 'bootstrap/dist/css/bootstrap.css';
-//import 'font-awesome/css/font-awesome.css';
+import 'bootstrap/dist/css/bootstrap.css';
+import 'font-awesome/css/font-awesome.css';
 import registerServiceWorker from './registerServiceWorker';
 // Import your reducers and routes here
 import Welcome from './Welcome';

@@ -2,7 +2,6 @@
 
 body {
     margin: 0;
-    background-color: #ececec;
 }
 
 /***** GLOBAL *****/
@@ -15,6 +14,7 @@ body {
     font-family: 'Open Sans', sans-serif;
     font-size: 14px;
     overflow: auto;
+    background-color: #ececec;
 }
 
 .welcome a {
@@ -27,7 +27,7 @@ body {
     font-family: 'Roboto Slab', serif;
     font-weight: 300;
     font-size: 36px;
-    margin: 0;
+    margin: 0 0 10px;
     line-height: 30px;
 }
 

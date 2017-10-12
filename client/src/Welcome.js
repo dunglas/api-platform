@@ -4,7 +4,13 @@ import './welcome.css';
 const Welcome = () => (
     <div className="welcome">
         <header className="welcome__top">
+          <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://api-platform.com"
+          >
             <Logo />
+          </a>
             <a
                 target="_blank"
                 rel="noopener noreferrer"
@@ -80,7 +86,7 @@ const Welcome = () => (
                 title="Ask your questions on Stack Overflow !"
             />
             <HelpButton
-                url="https://symfony.com/slack-invite"
+                url="https://api-platform.com/support"
                 Image={Slack}
                 title="Chat with the community on Slack !"
             />
