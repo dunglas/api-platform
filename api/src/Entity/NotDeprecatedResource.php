@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Core\Annotation\ApiProperty;
 use ApiPlatform\Core\Annotation\ApiResource;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
@@ -12,7 +13,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  * @ApiResource
  * @ORM\Entity
  */
-class Greeting
+class NotDeprecatedResource
 {
     /**
      * @var int The entity Id
@@ -29,7 +30,16 @@ class Greeting
      * @ORM\Column
      * @Assert\NotBlank
      */
-    public $name = '';
+    public $notDeprecatedField;
+
+    /**
+     * @var string A nice person
+     *
+     * @ORM\Column
+     * @Assert\NotBlank
+     * @ApiProperty(deprecationReason="This field is deprecated")
+     */
+    public $deprecatedField = '';
 
     public function getId(): int
     {
