@@ -1,11 +1,17 @@
 {
+    "repositories": [
+        {
+            "type": "vcs",
+            "url":  "https://github.com/soyuka/core"
+        }
+    ],
     "type": "project",
     "license": "MIT",
     "require": {
         "php": ">=8.0.2",
         "ext-ctype": "*",
         "ext-iconv": "*",
-        "api-platform/core": "^2.6",
+        "api-platform/core": "dev-fix/test-legacy-services",
         "composer/package-versions-deprecated": "^1.11",
         "doctrine/annotations": "^1.0",
         "doctrine/doctrine-bundle": "^2.1",
